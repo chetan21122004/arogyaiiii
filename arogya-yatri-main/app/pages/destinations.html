@@ -303,6 +303,38 @@ white-space: normal;
     }
 }
 
+/* ===== GALLERY SLIDER ===== */
+.slider-track {
+  display: flex;
+  gap: 5px;
+  animation: slide 15s linear infinite;
+}
+
+.slider-item {
+  flex: 0 0 280px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 </style>
 
 </head>
@@ -315,9 +347,9 @@ white-space: normal;
 
     <!-- Logo -->
     <a href="../../index.html" class="flex items-center">
-      <div class="leading-tight">
-        <div class="text-2xl tracking-tight">Arogya Yatri</div>
-        <div class="text-xs opacity-70">A service by Ewan Business Solutions</div>
+      <div class="leading-tight flex items-center">
+        <img src="../../src/images/logo.png" alt="Arogya Yatri" class=" h-32 ">
+        <div class="text-xs ">A service by Ewan Business Solutions</div>
       </div>
     </a>
 
@@ -453,145 +485,37 @@ white-space: normal;
 <main>
 
 <!-- ================= HERO SLIDER SECTION ================= -->
-<section class="hero-slider relative">
+<section class="hero-slider  relative">
   <div class="swiper heroSwiper">
     <div class="swiper-wrapper">
       <!-- Slide 1 - Jaipur -->
       <div class="swiper-slide">
         <img src="https://images.unsplash.com/photo-1758810357499-88163cd47fc0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jaipur - Pink City">
-        <div class="slide-overlay"></div>
-        <div class="slide-content max-w-7xl mx-auto px-6">
-          <div class="max-w-3xl">
-            <span class="inline-block px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-4">
-              Pink City, Rajput Royalty Capital
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Jaipur
-            </h1>
-            <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-              Explore the regal charm of Jaipur by visiting Amber Fort and City Palace. Shop vibrant bazaars filled with traditional Rajasthani crafts.
-            </p>
-            <a href="#cities" class="inline-flex items-center gap-3 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition">
-              Explore Destinations
-              <i class='bx bx-right-arrow-alt text-xl'></i>
-            </a>
-          </div>
-        </div>
       </div>
 
       <!-- Slide 2 - Udaipur -->
       <div class="swiper-slide">
-        <img src="https://plus.unsplash.com/premium_photo-1697729844084-c03db2377161?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <div class="slide-overlay"></div>
-        <div class="slide-content max-w-7xl mx-auto px-6">
-          <div class="max-w-3xl">
-            <span class="inline-block px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-4">
-              Venice of the East, City of Lakes
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Udaipur
-            </h1>
-            <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-              Discover romantic boat rides on Lake Pichola with views of palaces and temples. Experience the serene ambiance of royal heritage.
-            </p>
-            <a href="#cities" class="inline-flex items-center gap-3 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition">
-              Explore Destinations
-              <i class='bx bx-right-arrow-alt text-xl'></i>
-            </a>
-          </div>
-        </div>
+        <img src="https://plus.unsplash.com/premium_photo-1697729844084-c03db2377161?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Udaipur - City of Lakes">
       </div>
 
       <!-- Slide 3 - Kerala -->
       <div class="swiper-slide">
         <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kerala - Backwaters">
-        <div class="slide-overlay"></div>
-        <div class="slide-content max-w-7xl mx-auto px-6">
-          <div class="max-w-3xl">
-            <span class="inline-block px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-4">
-              God's Own Country & Backwater Paradise
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Kerala
-            </h1>
-            <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-              Cruise the idyllic backwaters of Alleppey, visit Munnar's tea plantations, and enjoy Ayurvedic wellness retreats.
-            </p>
-            <a href="#states" class="inline-flex items-center gap-3 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition">
-              Explore Destinations
-              <i class='bx bx-right-arrow-alt text-xl'></i>
-            </a>
-          </div>
-        </div>
       </div>
 
       <!-- Slide 4 - Rajasthan -->
       <div class="swiper-slide">
         <img src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rajasthan - Desert">
-        <div class="slide-overlay"></div>
-        <div class="slide-content max-w-7xl mx-auto px-6">
-          <div class="max-w-3xl">
-            <span class="inline-block px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-4">
-              Land of Kings & Desert Splendor
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Rajasthan
-            </h1>
-            <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-              Experience Jaipur's royal palaces, Udaipur's romantic lakes, and Jaisalmer's golden forts. Desert safaris and colorful bazaars await.
-            </p>
-            <a href="#states" class="inline-flex items-center gap-3 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition">
-              Explore Destinations
-              <i class='bx bx-right-arrow-alt text-xl'></i>
-            </a>
-          </div>
-        </div>
       </div>
 
       <!-- Slide 5 - Goa -->
       <div class="swiper-slide">
         <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Goa - Beach Paradise">
-        <div class="slide-overlay"></div>
-        <div class="slide-content max-w-7xl mx-auto px-6">
-          <div class="max-w-3xl">
-            <span class="inline-block px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-4">
-              Beach Paradise & Portuguese Legacy
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Goa
-            </h1>
-            <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-              Relax on sandy beaches, enjoy water sports, and explore Portuguese heritage churches. Perfect for a refreshing getaway.
-            </p>
-            <a href="#cities" class="inline-flex items-center gap-3 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition">
-              Explore Destinations
-              <i class='bx bx-right-arrow-alt text-xl'></i>
-            </a>
-          </div>
-        </div>
       </div>
 
       <!-- Slide 6 - Varanasi -->
       <div class="swiper-slide">
         <img src="https://images.unsplash.com/photo-1706186839147-0d708602587b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Varanasi - Spiritual Capital">
-        <div class="slide-overlay"></div>
-        <div class="slide-content max-w-7xl mx-auto px-6">
-          <div class="max-w-3xl">
-            <span class="inline-block px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-4">
-              Spiritual Capital, City of Temples
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Varanasi
-            </h1>
-            <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-              Witness the mystical Ganga Aarti on the ghats and explore ancient temples. Experience India's spiritual heart.
-            </p>
-            <a href="#cities" class="inline-flex items-center gap-3 px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-medium rounded-full transition">
-              Explore Destinations
-              <i class='bx bx-right-arrow-alt text-xl'></i>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -1150,6 +1074,84 @@ white-space: normal;
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="bg-white py-20 relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+
+    <!-- Heading -->
+    <h2 class="text-4xl md:text-4xl font-extrabold text-slate-900">
+      Arogya Yatri <span class="text-teal-500">Gallery</span>
+    </h2>
+
+    <!-- Slogan -->
+    <p class="mt-3 text-slate-600 max-w-2xl">
+      Explore India's premier medical destinations and world-class healthcare facilities through our visual journey.
+    </p>
+
+    <div class="mt-14 relative overflow-hidden">
+      <div class="slider-track">
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_one.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_two.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_three.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_four.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_five.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_six.webp" alt="">
+        </div>
+
+        <!-- duplicate -->
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_seven.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_eight.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_nine.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_ten.webp" alt="">
+        </div>
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_eleven.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_twelve.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_french_discovers.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="../../src/images/instagram/insta_french_discovers_two.webp" alt="">
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
