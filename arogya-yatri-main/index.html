@@ -1,0 +1,2002 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arogya Yatri - A Service by Ewan Business Solutions</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href='https://cdn.boxicons.com/3.0.7/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="app/style/index-page.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            logo: ['Anton', 'sans-serif'],
+            body: ['Lexend', 'sans-serif'],
+            brand: ['Anton']
+          },
+          colors: {
+            primaryDark: '#0F172A',
+            medicalGreen: '#2F6F5E'
+          },
+          keyframes: {
+            smoothIn: {
+              '0%': { opacity: '0', transform: 'translateY(18px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          },
+          animation: {
+            smoothIn: 'smoothIn 900ms cubic-bezier(0.22, 1, 0.36, 1) both'
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body class="font-body bg-white text-black">
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="siteHeader" class="fixed w-full z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+      <!-- Logo -->
+       <a href="index.html">
+      <div class="leading-tight text-white nav-text">
+        <div class="font-body text-2xl tracking-tight">
+          Arogya Yatri
+        </div>
+        <div class="text-xs opacity-80">
+          A service by Ewan Business Solutions
+        </div>
+      </div>
+      </a>
+
+      <!-- Links -->
+      <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium text-white nav-text">
+
+        <li><a href="app/pages/treatments.html" class="nav-link">Treatment</a></li>
+        <li><a href="app/pages/doctor.html" class="nav-link">Doctor</a></li>
+        <li><a href="app/pages/destinations.html" class="nav-link">Destinations</a></li>
+
+        <!-- Explore Dropdown -->
+        <li class="relative group">
+          <button class="nav-link inline-flex items-center gap-1">
+            Explore
+            <i class='bx bx-chevron-down text-sm'></i>
+          </button>
+
+          <div
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="app/pages/about.html"
+              class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-t-xl">About Us</a>
+            <a href="app/pages/testimonial.html"
+              class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50">Testimonials</a>
+            <a href="app/pages/news.html"
+              class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-b-xl">News/Blogs</a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- CTA -->
+      <div class="hidden md:flex">
+        <a
+          class="openConsultantModal nav-cta inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white text-white hover:bg-white hover:text-black transition">
+          <span class="h-8 w-8 rounded-full bg-white text-black flex items-center justify-center">
+            <i class='bx bx-right-arrow-alt text-lg'></i>
+          </span>
+          <span class="text-sm font-medium">Book Consultation</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-2xl text-white nav-text">
+        <i class='bx bx-menu'></i>
+      </button>
+
+    </nav>
+  </header>
+
+  <!-- ================= MOBILE SIDEBAR ================= -->
+  <div id="mobileMenu"
+    class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 md:hidden shadow-2xl">
+
+    <!-- Header -->
+    <div class="p-6 border-b border-gray-200 flex justify-between items-start">
+      <div>
+        <a href="index.html">
+          <div class="font-body text-2xl text-primaryDark">Arogya Yatri</div>
+          <div class="text-sm text-gray-500">A service by Ewan Business Solutions</div>
+        </a>
+      </div>
+      <button id="closeBtn" class="text-2xl text-black">
+        <i class='bx bx-x'></i>
+      </button>
+    </div>
+
+    <!-- Nav -->
+    <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
+      <a href="app/pages/treatments.html" class="block">Treatment</a>
+      <a href="app/pages/hospital.html" class="block">Hospitals</a>
+      <a href="app/pages/doctor.html" class="block">Doctor</a>
+      <a href="app/pages/destinations.html" class="block">Destinations</a>
+
+      <!-- Mobile Explore Dropdown -->
+      <div>
+        <button id="mobileExploreBtn" class="w-full flex items-center justify-between">
+          <span>Explore</span>
+          <i id="mobileExploreIcon" class='bx bx-chevron-down text-xl'></i>
+        </button>
+
+        <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
+          <a href="app/pages/about.html" class="block">About Us</a>
+          <a href="app/pages/testimonial.html" class="block">Testimonials</a>
+          <a href="app/pages/news.html" class="block">News/Blogs</a>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-gray-200"></div>
+
+      <a class="openConsultantModal flex items-center justify-between px-5 py-2 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition"
+        style="display: inline-flex; padding: 10px 20px; border-radius: 9999px; border: 1px solid black;">
+        <span>Book Consultation</span>
+        <span class="h-10 w-10 flex items-center justify-center rounded-full bg-teal-500 text-white">
+          <i class='bx bx-right-arrow-alt text-xl'></i>
+        </span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
+
+    <!-- Background Video Carousel -->
+    <div id="videoCarousel" class="absolute inset-0 w-full h-full">
+      <video id="heroVideo1" class="absolute inset-0 w-full h-full object-cover video-slide active" autoplay muted loop playsinline
+        style="will-change: transform; transform: translateZ(0);">
+        <source src="src/videos/clip1.mp4" type="video/mp4">
+      </video>
+      <video id="heroVideo2" class="absolute inset-0 w-full h-full object-cover video-slide" muted loop playsinline
+        style="will-change: transform; transform: translateZ(0);">
+        <source src="https://www.pexels.com/download/video/4440995/" type="video/mp4">
+      </video>
+      <video id="heroVideo3" class="absolute inset-0 w-full h-full object-cover video-slide" muted loop playsinline
+        style="will-change: transform; transform: translateZ(0);">
+        <source src="src/videos/clip3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60"
+      style="will-change: transform; transform: translateZ(0); z-index: 5; pointer-events: none;"></div>
+
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-28 text-center">
+
+      <!-- Brand Strip -->
+      <div class="mb-12 bg-black/0 w-fit ml-auto p-4 rounded-full mx-auto">
+        <div class="text-3xl sm:text-4xl font-bold tracking-tight text-teal-400">
+          Arogya Yatri
+        </div>
+        <div class="text-md uppercase tracking-widest text-white/80 mt-2">
+          By Ewan Business Solutions
+        </div>
+        <div class="mt-4 text-2xl sm:text-5xl md:text-4xl font-semibold tracking-wide text-teal-300 uppercase">
+          Your Medical Tourism Facilitator
+        </div>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="text-xl sm:text-xl md:text-xl  leading-tight max-w-6xl mx-auto mb-10">
+        Your one trusted partner that connects you to
+        <span class="text-teal-200">hospitals and specialists in India</span>
+        while helping you explore the country's culture, nature, and wellness traditions.
+      </h1>
+
+      <!-- Feature Highlights -->
+      <div
+        class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-md sm:text-md font-medium text-white/90 mb-16">
+        <span>Zero Waiting Period</span>
+        <span class="hidden sm:inline text-white/40">|</span>
+        <span>We Speak Your Language</span>
+        <span class="hidden sm:inline text-white/40">|</span>
+        <span>Follow-up Medicine Courier</span>
+        <span class="hidden sm:inline text-white/40">|</span>
+        <span>Travel with your Companion Free*</span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-5 mb-16">
+
+
+        <a
+          class="openConsultantModal inline-flex items-center gap-4 px-7 py-3.5 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-100 transition">
+          <span class="h-10 w-10 rounded-full bg-teal-500 text-white flex items-center justify-center">
+            <i class='bx bx-calendar text-xl'></i>
+          </span>
+          Book Consultation
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- WHY CHOOSE AROGYA YATRI -->
+  <section class="relative py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 60" height="60" viewBox="0 0 60 60"
+      xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%23f1f5f9"
+      fill-opacity="0.4" %3E%3Ccircle cx="30" cy="30" r="1" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+    <div class="relative max-w-7xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <p class="text-xs tracking-widest uppercase text-teal-500 font-medium mb-3">
+          Why Choose Us
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          Why Choose <span class="text-teal-500">Arogya Yatri?</span>
+        </h2>
+        <p class="mt-4 text-sm text-slate-500 max-w-2xl mx-auto">
+          Your trusted partner for seamless medical tourism with complete support at every step.
+        </p>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="grid lg:grid-cols-2 gap-8 mb-16">
+
+        <!-- Feature 1 -->
+        <div class="group relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
+          </div>
+          <div
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-16 h-16 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-world text-2xl text-white'></i>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">
+                  Multilingual Support
+                  <span class="text-sm font-normal text-teal-600 ml-2">(EWAN Powered)</span>
+                </h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                  Seamless communication in 120+ languages with trained interpreters and 24/7 multilingual assistance
+                  throughout your medical journey.
+                </p>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-teal-500'></i>
+                    <span class="text-slate-600">120+ languages</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-teal-500'></i>
+                    <span class="text-slate-600">24/7 assistance</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-teal-500'></i>
+                    <span class="text-slate-600">Hospital interpreters</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-teal-500'></i>
+                    <span class="text-slate-600">Cultural sensitivity</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="group relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
+          </div>
+          <div
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-dollar-circle text-2xl text-white'></i>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">
+                  Save Up to 80%
+                  <span class="text-sm bg-orange-100 text-orange-700 px-2 py-1 rounded-full ml-2">Best Value</span>
+                </h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                  World-class treatment at NABH-accredited hospitals with transparent pricing and no hidden costs,
+                  delivering exceptional value.
+                </p>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-orange-500'></i>
+                    <span class="text-slate-600">80% cost savings</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-orange-500'></i>
+                    <span class="text-slate-600">NABH accredited</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-orange-500'></i>
+                    <span class="text-slate-600">Transparent pricing</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-orange-500'></i>
+                    <span class="text-slate-600">Quality assured</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="group relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
+          </div>
+          <div
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-package text-2xl text-white'></i>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">
+                  Post-Treatment Care
+                  <span class="text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded-full ml-2">Continuous</span>
+                </h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                  Comprehensive follow-up care with remote consultations, medicine delivery, and continuous recovery
+                  monitoring after you return home.
+                </p>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-blue-500'></i>
+                    <span class="text-slate-600">Remote follow-ups</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-blue-500'></i>
+                    <span class="text-slate-600">Medicine delivery</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-blue-500'></i>
+                    <span class="text-slate-600">Secure portal</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-blue-500'></i>
+                    <span class="text-slate-600">Recovery monitoring</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="group relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
+          </div>
+          <div
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-user-plus text-2xl text-white'></i>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-slate-900 mb-3">
+                  Companion Support
+                  <span class="text-sm bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full ml-2">Free*</span>
+                </h3>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                  Bring your loved one along with comprehensive travel arrangements, visa assistance, and shared
+                  accommodation options.
+                </p>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-emerald-500'></i>
+                    <span class="text-slate-600">Visa assistance</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-emerald-500'></i>
+                    <span class="text-slate-600">Travel arrangements</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-emerald-500'></i>
+                    <span class="text-slate-600">Shared accommodation</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class='bx bx-check text-emerald-500'></i>
+                    <span class="text-slate-600">Documentation support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Services Row -->
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Service 1 -->
+        <div
+          class="group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 rounded-lg bg-violet-100 flex items-center justify-center group-hover:bg-violet-200 transition-colors">
+              <i class='bx bx-support text-xl text-violet-600'></i>
+            </div>
+            <h4 class="font-semibold text-slate-900">End-to-End Assistance</h4>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Single point of contact for medical care, travel arrangements, accommodation, and cultural experiences
+            throughout your journey.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div
+          class="group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 rounded-lg bg-rose-100 flex items-center justify-center group-hover:bg-rose-200 transition-colors">
+              <i class='bx bx-file-blank text-xl text-rose-600'></i>
+            </div>
+            <h4 class="font-semibold text-slate-900">Free Report Analysis</h4>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Expert panel review of your medical reports within 24-48 hours with honest recommendations and transparent
+            cost estimates.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div
+          class="group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center group-hover:bg-amber-200 transition-colors">
+              <i class='bx bx-dish text-xl text-amber-600'></i>
+            </div>
+            <h4 class="font-semibold text-slate-900">Personalized Nutrition</h4>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Customized meal plans by certified dieticians aligned with your treatment, cultural preferences, and dietary
+            restrictions.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-16 text-center">
+        <div
+          class=" hidden  sm:inline-flex items-center gap-4 bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl p-8 text-white">
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold mb-2">Ready to Start Your Medical Journey?</h3>
+            <p class="text-white/90">Get expert guidance and transparent pricing for your treatment in India.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="#"
+              class="openConsultantModal inline-flex items-center gap-2 px-6 py-3 bg-white text-teal-600 rounded-xl font-semibold hover:bg-slate-50 transition">
+              <i class='bx bx-calendar'></i>
+              Book Consultation
+            </a>
+            <a href="app/pages/pricing.html"
+              class="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition">
+              <i class='bx bx-dollar-circle'></i>
+              View Pricing
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE COST COMPARISON BAR -->
+  <section class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 border-t border-slate-700">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white mb-3">
+            Compare Treatment Costs
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base">
+            See how much you can save by choosing India for your medical treatment
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <!-- Treatment Selection -->
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2">Select Treatment</label>
+              <select id="treatmentSelect" class="w-full px-4 py-3 rounded-xl bg-white/90 border border-white/30 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <option value="">Choose a treatment...</option>
+                <option value="angioplasty">Angioplasty (PTCA)</option>
+                <option value="bypass">Bypass Surgery (CABG)</option>
+                <option value="knee">Total Knee Replacement</option>
+                <option value="hip">Hip Replacement</option>
+                <option value="brain-tumor">Brain Tumor Surgery</option>
+                <option value="ivf">IVF / Fertility Treatment</option>
+                <option value="cataract">Cataract Surgery</option>
+                <option value="dental-implant">Dental Implant</option>
+              </select>
+            </div>
+
+            <!-- Country Selection -->
+            <div>
+              <label class="block text-sm font-medium text-slate-300 mb-2">Compare With</label>
+              <select id="countrySelect" class="w-full px-4 py-3 rounded-xl bg-white/90 border border-white/30 text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <option value="usa">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="germany">Germany</option>
+                <option value="singapore">Singapore</option>
+                <option value="spain">Spain</option>
+                <option value="uae">UAE</option>
+                <option value="australia">Australia</option>
+                <option value="switzerland">Switzerland</option>
+                <option value="czech">Czech Republic</option>
+              </select>
+            </div>
+
+            <!-- Calculate Button -->
+            <div class="flex items-end">
+              <button id="calculateBtn" class="w-full px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-xl transition-colors">
+                Calculate Savings
+              </button>
+            </div>
+          </div>
+
+          <!-- Results Display -->
+          <div id="costResults" class="hidden bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <p class="text-sm text-slate-400 mb-2">Cost in <span id="selectedCountry"></span></p>
+                <p class="text-2xl font-bold text-white" id="otherCountryCost">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-slate-400 mb-2">Cost in India</p>
+                <p class="text-2xl font-bold text-teal-400" id="indiaCost">-</p>
+              </div>
+              <div>
+                <p class="text-sm text-slate-400 mb-2">You Save</p>
+                <p class="text-2xl font-bold text-green-400" id="savingsAmount">-</p>
+                <p class="text-sm text-green-300 mt-1" id="savingsPercent">-</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE INDIA -->
+  <section class="relative py-20 bg-gradient-to-br from-slate-50 via-white to-teal-50/30">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <p class="text-xs tracking-widest uppercase text-teal-500 font-medium mb-3">
+          Medical Travel Advantage
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          Why Choose <span class="text-teal-500">India?</span>
+        </h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mt-4">
+          India has emerged as the world's most trusted destination for advanced, affordable, and patient-centric
+          healthcare, backed by government support and world-class infrastructure.
+        </p>
+      </div>
+
+      <!-- Key Statistics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div class="text-center p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl font-bold text-teal-600 mb-2">80%</div>
+          <div class="text-sm text-slate-600">Cost Savings</div>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl font-bold text-blue-600 mb-2">0</div>
+          <div class="text-sm text-slate-600">Waiting Period</div>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl font-bold text-emerald-600 mb-2">24/7</div>
+          <div class="text-sm text-slate-600">Support Available</div>
+        </div>
+        <div class="text-center p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl font-bold text-orange-600 mb-2">JCI</div>
+          <div class="text-sm text-slate-600">Accredited Hospitals</div>
+        </div>
+      </div>
+
+      <!-- Key Benefits - Simplified Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Government Support -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-shield-quarter text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">Government 'Heal in India' Program</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Official support with simplified e-Medical visas, fast-track approvals, and dedicated helplines.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zero Waiting -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-time text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">Zero Waiting Period</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Immediate care and faster recovery with no waiting lists for treatments and procedures.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- World-Class Care -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-health text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">World-Class Healthcare</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                NABH/JCI accredited hospitals with internationally trained doctors and cutting-edge technology.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Affordable Quality -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-dollar-circle text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">Affordable Excellence</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                High-quality treatments at affordable costs without compromising on safety or outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Language & Communication -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-world text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">Clear Communication</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                English-speaking medical teams and professional interpreters for seamless communication.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comprehensive Support -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-support text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">Complete Support System</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                24/7 personalized care, one-stop MVT portal, and comprehensive concierge services.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Holistic Healing -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-spa text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">Holistic Healing Experience</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Combine modern medicine with Ayurveda, Yoga, and wellness traditions in scenic recovery destinations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Safe & Connected -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md">
+              <i class='bx bx-shield text-xl text-white'></i>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold text-slate-900 mb-2">Safe & Well-Connected</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Safe cities with fast-track airport assistance, interpreter support, and excellent connectivity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUR SERVICES -->
+  <section class="relative bg-slate-50 py-24 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <p class="text-xs tracking-widest uppercase text-teal-500 font-medium mb-3">
+          What We Offer
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          Our <span class="text-teal-500">Services</span>
+        </h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+          Comprehensive support for your entire medical journey from start to finish.
+        </p>
+      </div>
+
+      <!-- Services Grid - Simplified Layout -->
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+        <!-- 1. Medical Coordination -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-clinic text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Medical Coordination</h3>
+            <span class="text-xs bg-teal-100 text-teal-700 px-3 py-1 rounded-full">Core Service</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            We manage your entire healthcare journey, connecting you with top NABH-accredited hospitals and expert doctors for seamless treatment plans.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-teal-500 text-base'></i>
+              <span class="text-slate-600">Expert doctor matching</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-teal-500 text-base'></i>
+              <span class="text-slate-600">Hospital coordination</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Visa & Travel Assistance -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bxs-plane-alt text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Visa & Travel</h3>
+            <span class="text-xs bg-sky-100 text-sky-700 px-3 py-1 rounded-full">Essential</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            Get hassle-free visa processing and travel support, including visa facilitation and travel arrangements tailored to your medical trip.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-sky-500 text-base'></i>
+              <span class="text-slate-600">e-Medical visa assistance</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-sky-500 text-base'></i>
+              <span class="text-slate-600">Travel arrangements</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Accommodation -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-home text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Accommodation</h3>
+            <span class="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">Comfort</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            Stay comfortably with our handpicked accommodations near hospitals, suited to your budget and preferences for a stress-free visit.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-emerald-500 text-base'></i>
+              <span class="text-slate-600">Hospital proximity</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-emerald-500 text-base'></i>
+              <span class="text-slate-600">Budget-friendly options</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Language Support -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-world text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Language Support</h3>
+            <span class="text-xs bg-violet-100 text-violet-700 px-3 py-1 rounded-full">120+ Languages</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            From arrival to departure, our multilingual team ensures clear communication, helping you navigate medical and travel processes smoothly.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-violet-500 text-base'></i>
+              <span class="text-slate-600">Professional interpreters</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-violet-500 text-base'></i>
+              <span class="text-slate-600">24/7 availability</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Companion Planning -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-user-plus text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Companion Planning</h3>
+            <span class="text-xs bg-rose-100 text-rose-700 px-3 py-1 rounded-full">Free*</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            We organize travel and stay plans for your companions, ensuring loved ones are with you every step for comfort and care.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-rose-500 text-base'></i>
+              <span class="text-slate-600">Companion visa assistance</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-rose-500 text-base'></i>
+              <span class="text-slate-600">Shared accommodations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Tourism Planning -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-map text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Tourism Planning</h3>
+            <span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full">Cultural</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            Explore India's rich culture and scenic beauty with customized tourism plans crafted to complement your medical recovery.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-amber-500 text-base'></i>
+              <span class="text-slate-600">Heritage tours</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-amber-500 text-base'></i>
+              <span class="text-slate-600">Recovery-friendly itineraries</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Post-Recovery Consultation -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-support text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Post-Recovery Care</h3>
+            <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Follow-up</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            Stay connected with doctors through follow-up consultations for continuous care and smooth recovery after your treatment.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-indigo-500 text-base'></i>
+              <span class="text-slate-600">Remote consultations</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-indigo-500 text-base'></i>
+              <span class="text-slate-600">Recovery tracking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Second Opinion -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-file-find text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Second Opinion</h3>
+            <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Free*</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            Access expert second opinions from renowned medical specialists to make informed decisions about your healthcare.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-blue-500 text-base'></i>
+              <span class="text-slate-600">Specialist consultation</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-blue-500 text-base'></i>
+              <span class="text-slate-600">Report analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Medicine Courier -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-package text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Medicine Courier</h3>
+            <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Global</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            Receive your medicines delivered safely to your home, ensuring uninterrupted treatment even after travel.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-orange-500 text-base'></i>
+              <span class="text-slate-600">Worldwide shipping</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-orange-500 text-base'></i>
+              <span class="text-slate-600">Temperature controlled</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Clinical Dietitian Support -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[320px]">
+          <div class="flex flex-col items-center text-center mb-6">
+            <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-md mb-4">
+              <i class='bx bx-dish text-2xl text-white'></i>
+            </div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">Clinical Nutrition</h3>
+            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Expert</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+            Receive personalized nutrition plans from certified clinical dieticians, tailored to your treatment and recovery needs.
+          </p>
+          <div class="space-y-2.5 text-sm">
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-green-500 text-base'></i>
+              <span class="text-slate-600">Custom meal plans</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class='bx bx-check text-green-500 text-base'></i>
+              <span class="text-slate-600">Doctor collaboration</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Call to Action -->
+      <div class="mt-16 text-center">
+        <div class="bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl p-8 text-white max-w-4xl mx-auto">
+          <h3 class="text-2xl font-semibold mb-3">Ready to Experience Our Services?</h3>
+          <p class="text-white/90 mb-6 max-w-2xl mx-auto">
+            Get personalized assistance for your medical journey with our comprehensive service portfolio.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#" class="openConsultantModal inline-flex items-center gap-2 px-6 py-3 bg-white text-teal-600 rounded-xl font-semibold hover:bg-slate-50 transition">
+              <i class='bx bx-calendar'></i>
+              Book Consultation
+            </a>
+            <a href="app/pages/treatments.html" class="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition">
+              <i class='bx bx-plus-medical'></i>
+              View Treatments
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="relative bg-white py-28 border-t border-slate-100 overflow-hidden howitworks">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- HEADING -->
+      <div class="max-w-2xl mb-20">
+        <p class="text-xs tracking-widest uppercase text-black font-medium mb-3">
+          Simple & Transparent
+        </p>
+
+        <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          How <span class="text-teal-500">Arogya Yatri</span> Works
+        </h2>
+
+        <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+          A carefully designed journey that supports you from first consultation
+          to recovery and long-term follow-up care.
+        </p>
+      </div>
+
+      <!-- STEPS WRAPPER -->
+      <div class="relative">
+
+        <!-- CONNECTING LINE (DESKTOP) -->
+        <div class="hidden md:block absolute top-[42px] left-0 w-full h-[2px] bg-slate-200">
+          <div id="progressLine" class="h-full bg-orange-400 w-0"></div>
+        </div>
+
+        <!-- STEPS -->
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-12 relative z-10">
+
+          <!-- STEP 1 -->
+          <div
+            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
+            <div class="step-icon bg-teal-50 text-teal-600">
+              <i class="bx bx-file"></i>
+            </div>
+            <div>
+              <h3 class="step-title">Step 1: Share Your Medical Need</h3>
+              <p class="step-desc">
+                Fill out our online form or WhatsApp us your reports, and our care team connects with you within 24
+                hours.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div
+            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
+            <div class="step-icon bg-sky-50 text-sky-600">
+              <i class="bx bx-clinic"></i>
+            </div>
+            <div>
+              <h3 class="step-title">Step 2: Get Expert Opinions & Cost Estimates</h3>
+              <p class="step-desc">
+                We connect with trusted Indian hospitals and specialists to get you personalized treatment plans and
+                transparent pricing.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div
+            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
+            <div class="step-icon bg-indigo-50 text-indigo-600">
+              <i class="bx bxs-plane-alt"></i>
+            </div>
+            <div>
+              <h3 class="step-title">Step 3: Visa, Flights & Accommodation - All Arranged</h3>
+              <p class="step-desc">
+                We help you apply for your medical visa, plan travel, and arrange safe accommodation with interpreter
+                support from Ewan.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div
+            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
+            <div class="step-icon bg-emerald-50 text-emerald-600">
+              <i class="bx bx-user-check"></i>
+            </div>
+            <div>
+              <h3 class="step-title">Step 4: Warm Welcome & Hassle-Free Admission</h3>
+              <p class="step-desc">
+                Our team receives you at the airport, assists with check-in, and ensures smooth coordination during your
+                treatment.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div
+            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
+            <div class="step-icon bg-rose-50 text-rose-600">
+              <i class="bx bx-leaf"></i>
+            </div>
+            <div>
+              <h3 class="step-title">Step 5: Heal, Relax & Discover India</h3>
+              <p class="step-desc">
+                After treatment, enjoy a recovery stay, Ayurveda therapies, or local sightseeing - blending care with
+                culture.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 6 -->
+          <div
+            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
+            <div class="step-icon bg-violet-50 text-violet-600">
+              <i class="bx bx-support"></i>
+            </div>
+            <div>
+              <h3 class="step-title">Step 6: Follow-Up and Continued Care</h3>
+              <p class="step-desc">
+                We stay in touch even after you return home, sharing medical reports, arranging follow-ups, and sending
+                essential medicines to support your recovery.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- ANIMATION SCRIPT -->
+    <script>
+      const steps = document.querySelectorAll('.step-card');
+      const line = document.getElementById('progressLine');
+
+      const observer = new IntersectionObserver(
+        entries => {
+          if (entries[0].isIntersecting) {
+            steps.forEach((step, index) => {
+              setTimeout(() => {
+                step.classList.add('step-visible');
+                line.style.width = ((index + 1) / steps.length) * 100 + '%';
+              }, index * 250);
+            });
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(steps[0]);
+    </script>
+  </section>
+
+  <!-- SOCIAL MEDIA TESTIMONIALS -->
+  <section class="relative bg-slate-50 py-24 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <p class="text-xs tracking-widest uppercase text-teal-500 font-medium mb-3">
+          Patient Stories
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          Our Social Media <span class="text-teal-500">Updates</span>
+        </h2>
+        <p class="mt-4 text-sm text-slate-500 max-w-2xl mx-auto">
+          Real experiences from patients who trusted Arogya Yatri for their medical journey.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <a href="app/pages/testimonial.html"
+          class="group inline-flex items-center gap-4 px-6 py-3 rounded-full bg-white border border-slate-300 text-slate-900 font-medium hover:bg-teal-500 hover:text-white transition">
+          <span
+            class="h-9 w-9 rounded-full bg-teal-500 text-white flex items-center justify-center transition group-hover:bg-white group-hover:text-teal-500">
+            <i class='bx bx-right-arrow-alt text-xl'></i>
+          </span>
+          View All Testimonials
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- AAROGYAYATRI • INSTAGRAM REELS -->
+<section class="bg-gradient-to-b from-white to-slate-50 py-24 pt-0 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between gap-6">
+      <div class="max-w-3xl">
+        <h2 class="text-4xl md:text-[42px] font-extrabold text-slate-900">
+          AarogyaYatri <span class="text-teal-500">on Instagram</span>
+        </h2>
+        <p class="mt-4 text-slate-600 text-[15px]">
+          Real patient stories, doctor insights, and care moments directly from our Instagram.
+        </p>
+      </div>
+
+       <!-- Instagram CTA -->
+  <a
+    href="https://www.instagram.com/arogya.yatri/"
+    target="_blank"
+    class="hidden md:inline-flex items-center gap-2 rounded-full bg-slate-100 px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-200 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+    </svg>
+    View our Instagram
+  </a>
+    </div>
+
+    <!-- Reels Slider -->
+    <div class="mt-16 relative">
+      <div
+        id="reelsSlider"
+        class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-4">
+
+        <!-- Reel Card -->
+        <div class="insta-reel-card">
+          <div class="insta-reel-frame">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DLJkcwjvmMK/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14">
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="insta-reel-card">
+          <div class="insta-reel-frame">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DK3yW-Cv1Js/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14">
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="insta-reel-card">
+          <div class="insta-reel-frame">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DND4O94Ss_n/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14">
+            </blockquote>
+          </div>
+        </div>
+
+         <div class="insta-reel-card">
+          <div class="insta-reel-frame">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DLFLSSXvue_/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14">
+            </blockquote>
+          </div>
+        </div>
+
+         <div class="insta-reel-card">
+          <div class="insta-reel-frame">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DOgW_XdD4ev/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14">
+            </blockquote>
+          </div>
+        </div>
+
+         <div class="insta-reel-card">
+          <div class="insta-reel-frame">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DQolrY6jOaU/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14">
+            </blockquote>
+          </div>
+        </div>
+         <div class="insta-reel-card">
+          <div class="insta-reel-frame">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/reel/DOOoI2lDxId/?utm_source=ig_embed&amp;utm_campaign=loading"
+              data-instgrm-version="14">
+            </blockquote>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Gallery -->
+<section class="bg-white py-20 relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+
+    <!-- Heading -->
+    <h2 class="text-4xl md:text-4xl font-extrabold text-slate-900">
+      Arogya Yatri <span class="text-teal-500">Gallery</span>
+    </h2>
+
+    <!-- Slogan -->
+    <p class="mt-3 text-slate-600 max-w-2xl">
+      Explore India's premier medical destinations and world-class healthcare facilities through our visual journey.
+    </p>
+
+    <div class="mt-14 relative overflow-hidden">
+      <div class="slider-track">
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_one.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_two.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_three.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_four.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_five.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_six.webp" alt="">
+        </div>
+
+        <!-- duplicate -->
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_seven.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_eight.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_nine.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_ten.webp" alt="">
+        </div>
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_eleven.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_twelve.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_french_discovers.webp" alt="">
+        </div>
+
+        <div class="slider-item">
+          <img src="src/images/instagram/insta_french_discovers_two.webp" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+
+
+
+<!-- Instagram Embed Script -->
+<script async src="//www.instagram.com/embed.js"></script>
+
+ 
+
+
+ 
+
+  <!-- CONTACT SECTION -->
+<section class="relative bg-white py-28 border-t border-slate-100">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+
+    <!-- Label -->
+    <p class="text-xs uppercase tracking-[0.25em] text-teal-500 font-medium mb-4">
+      Contact
+    </p>
+
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">
+      Let’s Connect with <span class="text-teal-500">Arogya Yatri</span>
+    </h2>
+
+    <!-- Subtext -->
+    <p class="mt-6 text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+      Our medical care coordinators are available to guide you through
+      treatment options, documentation, and next steps with clarity and care.
+    </p>
+
+    <!-- Divider -->
+    <div class="mt-12 flex justify-center">
+      <span class="w-20 h-[2px] bg-teal-500/30"></span>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="mt-10 grid gap-12 sm:grid-cols-3 mb-10">
+
+      <!-- Phone -->
+      <div class="flex flex-col items-center gap-4 text-center">
+        <div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center">
+          <i class="bx bx-phone text-xl text-teal-500"></i>
+        </div>
+        <p class="text-xs uppercase tracking-widest text-slate-500">
+          Phone
+        </p>
+        <a
+          href="tel:8530054299"
+          class="text-lg font-medium text-slate-900 hover:text-teal-500 transition">
+          +91 85300 54299
+        </a>
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col items-center gap-4 text-center">
+        <div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center">
+          <i class="bx bx-envelope text-xl text-teal-500"></i>
+        </div>
+        <p class="text-xs uppercase tracking-widest text-slate-500">
+          Email
+        </p>
+        <a
+          href="mailto:apoorva@ewan.co.in"
+          class="text-sm sm:text-base font-medium text-slate-900 hover:text-teal-500 transition break-all">
+          apoorva@ewan.co.in
+        </a>
+      </div>
+
+      <!-- Alternate Email -->
+      <div class="flex flex-col items-center gap-4 text-center">
+        <div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center">
+          <i class="bx bx-envelope-open text-xl text-teal-500"></i>
+        </div>
+        <p class="text-xs uppercase tracking-widest text-slate-500">
+          Alternate Email
+        </p>
+        <a
+          href="mailto:pushkaraj.thakurdas@ewan.co.in"
+          class="text-sm sm:text-base font-medium text-slate-900 hover:text-teal-500 transition break-all">
+          pushkaraj.thakurdas@ewan.co.in
+        </a>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-25 flex justify-center">
+      <a
+        href="https://wa.me/918530054299"
+        target="_blank"
+        class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-teal-500 text-teal-600 font-medium hover:bg-teal-500 hover:text-white transition">
+        <i class="bx bxl-whatsapp text-xl"></i>
+        Start WhatsApp Conversation
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="relative bg-slate-900 text-slate-300 pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- TOP GRID -->
+    <div class="grid gap-14 md:grid-cols-2 lg:grid-cols-5 mb-16">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <a href="index.html">
+          <h3 class="font-brand text-2xl text-white mb-3">Arogya Yatri</h3>
+          <p class="text-sm text-slate-400 max-w-md leading-relaxed mb-6">
+            Arogya Yatri is a global medical tourism platform connecting patients
+            with world-class hospitals, trusted doctors, and seamless healthcare
+            journeys across borders.
+          </p>
+        </a>
+
+        <!-- Social -->
+        <div class="flex items-center gap-4">
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-500 transition">
+            <i class="bx bxl-facebook text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/arogya.yatri/"
+            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-500 transition">
+            <i class="bx bxl-instagram text-lg"></i>
+          </a>
+          <a href="#"
+            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-500 transition">
+            <i class="bx bxl-youtube text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-semibold mb-5">Quick Links</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+          <li><a href="app/pages/treatments.html" class="hover:text-white transition">Treatment</a></li>
+          <li><a href="app/pages/doctor.html" class="hover:text-white transition">Doctor</a></li>
+          <li><a href="app/pages/destinations.html" class="hover:text-white transition">Destinations</a></li>
+          <li><a href="app/pages/about.html" class="hover:text-white transition">About Us</a></li>
+          <li><a href="app/pages/testimonial.html" class="hover:text-white transition">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-white font-semibold mb-5">Services</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="app/pages/hospital.html" class="hover:text-white transition">Medical Tourism</a></li>
+          <li><a href="app/pages/doctor.html" class="hover:text-white transition">Doctor Consultation</a></li>
+          <li><a href="app/pages/pricing.html" class="hover:text-white transition">Treatment Packages</a></li>
+          <li><a href="app/pages/doctor.html" class="hover:text-white transition">Post-Treatment Care</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT (NEW) -->
+      <div>
+        <h4 class="text-white font-semibold mb-5">Contact</h4>
+
+        <ul class="space-y-4 text-sm">
+
+          <!-- Phone -->
+          <li class="flex items-start gap-3">
+            <i class="bx bx-phone text-teal-400 text-lg mt-0.5"></i>
+            <a href="tel:8530054299" class="hover:text-white transition">
+              +91 85300 54299
+            </a>
+          </li>
+
+          <!-- Email -->
+          <li class="flex items-start gap-3">
+            <i class="bx bx-envelope text-teal-400 text-lg mt-0.5"></i>
+            <a href="mailto:apoorva@ewan.co.in" class="hover:text-white transition break-all">
+              apoorva@ewan.co.in
+            </a>
+          </li>
+
+          <!-- Alternate Email -->
+          <li class="flex items-start gap-3">
+            <i class="bx bx-envelope-open text-teal-400 text-lg mt-0.5"></i>
+            <a href="mailto:pushkaraj.thakurdas@ewan.co.in" class="hover:text-white transition break-all">
+              pushkaraj.thakurdas@ewan.co.in
+            </a>
+          </li>
+
+          <!-- WhatsApp CTA -->
+          <li class="pt-2">
+            <a
+              href="https://wa.me/918530054299"
+              target="_blank"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white transition">
+              <i class="bx bxl-whatsapp text-lg"></i>
+              WhatsApp Us
+            </a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="border-t border-white/10 mb-8"></div>
+
+    <!-- BOTTOM BAR -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+      <p>
+        © 2025 Arogya Yatri. A service by Ewan Business Solutions. All rights reserved.
+      </p>
+
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <i class="bx bx-shield-quarter text-teal-400"></i>
+          Secure & Confidential
+        </span>
+        <span class="flex items-center gap-2">
+          <i class="bx bx-world text-teal-400"></i>
+          Global Healthcare Network
+        </span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+    <!-- CONSULTANT MODAL -->
+<div id="consultantModal"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+
+  <div class="relative w-full max-w-md rounded-[28px] bg-white shadow-2xl overflow-hidden">
+
+    <!-- CLOSE BUTTON -->
+    <button
+      onclick="closeConsultantModal()"
+      class="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-slate-100 transition">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-700" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- BODY -->
+    <div class="px-4 py-4">
+      <div class="w-full h-[520px] rounded-2xl overflow-hidden border border-slate-200">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeOv7WZLFWBiCBvqrF9mIMLRLxN8jjjyeE-08HHJx_eOEJ7lw/viewform"
+          class="w-full h-full"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0">
+          Loading…
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Whatsapp Icon -->
+ <a
+  href="https://wa.me/918530054299"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+  class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 shadow-xl hover:scale-105 hover:bg-green-600 transition-transform duration-300">
+  <i class='bx bxl-whatsapp text-white text-3xl'></i>
+</a>
+
+  <!-- ================= MOBILE DROPDOWN SCRIPT ================= -->
+  <script>
+    const exploreBtn = document.getElementById('mobileExploreBtn')
+    const exploreMenu = document.getElementById('mobileExploreMenu')
+    const exploreIcon = document.getElementById('mobileExploreIcon')
+
+    exploreBtn.addEventListener('click', () => {
+      exploreMenu.classList.toggle('hidden')
+      exploreIcon.classList.toggle('bx-chevron-down')
+      exploreIcon.classList.toggle('bx-chevron-up')
+    })
+  </script>
+
+
+<!-- Instagram Reels Slider Script -->
+<script>
+  function scrollReels(direction) {
+    const slider = document.getElementById("reelsSlider");
+    slider.scrollBy({ left: direction * 300, behavior: "smooth" });
+  }
+
+  function togglePlay(card) {
+    const video = card.querySelector("video");
+
+    document.querySelectorAll(".reel-card video").forEach(v => {
+      if (v !== video) {
+        v.pause();
+        v.currentTime = 0;
+        v.parentElement.classList.remove("playing");
+      }
+    });
+
+    if (video.paused) {
+      video.play();
+      card.classList.add("playing");
+    } else {
+      video.pause();
+      card.classList.remove("playing");
+    }
+  }
+</script>
+
+  <!-- MODAL SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openButtons = document.querySelectorAll('.openConsultantModal');
+      const modal = document.getElementById('consultantModal');
+      const closeBtn = document.getElementById('closeConsultantModal');
+      const form = document.getElementById('consultantForm');
+
+      openButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        });
+      }
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = form.querySelector('input[name="name"]').value;
+        const country = form.querySelector('select[name="country"]').value;
+        const whatsapp = form.querySelector('input[name="whatsapp"]').value;
+        const treatment = form.querySelector('textarea[name="treatment"]').value;
+        const contactMethod = form.querySelector('select[name="contactMethod"]').value;
+        const contactTime = form.querySelector('select[name="contactTime"]').value;
+
+        const message =
+          `Consultation Request\n\n` +
+          `Name: ${name}\n` +
+          `Country: ${country}\n` +
+          `WhatsApp Number: ${whatsapp}\n` +
+          `Treatment/Concern: ${treatment}\n` +
+          `Preferred Way to Contact: ${contactMethod}\n` +
+          `Preferred Time to Contact: ${contactTime}`;
+
+        const whatsappURL =
+          `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, '_blank');
+      });
+    });
+  </script>
+  <script>
+  function closeConsultantModal() {
+    document.getElementById("consultantModal").classList.add("hidden")
+  }
+</script>
+
+
+  <!-- sidebar -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.onclick = () => mobileMenu.classList.remove('-translate-x-full');
+    closeBtn.onclick = () => mobileMenu.classList.add('-translate-x-full');
+  </script>
+
+  <!-- header -->
+  <script>
+    const header = document.getElementById('siteHeader');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        header.classList.add('nav-scrolled');
+      } else {
+        header.classList.remove('nav-scrolled');
+      }
+    });
+  </script>
+
+  <!-- Video Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const videos = [
+        document.getElementById('heroVideo1'),
+        document.getElementById('heroVideo2'),
+        document.getElementById('heroVideo3')
+      ].filter(v => v !== null);
+      
+      if (videos.length === 0) return;
+
+      let currentIndex = 0;
+      const videoDuration = 15000; // 15 seconds per video
+
+      function switchVideo() {
+        videos[currentIndex].classList.remove('active');
+        videos[currentIndex].pause();
+        
+        currentIndex = (currentIndex + 1) % videos.length;
+        
+        videos[currentIndex].classList.add('active');
+        videos[currentIndex].play();
+      }
+
+      // Auto-switch videos every 15 seconds
+      setInterval(switchVideo, videoDuration);
+
+      // Ensure first video plays
+      if (videos[0]) {
+        videos[0].play();
+      }
+    });
+  </script>
+
+  <!-- Cost Calculator Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const treatmentSelect = document.getElementById('treatmentSelect');
+      const countrySelect = document.getElementById('countrySelect');
+      const calculateBtn = document.getElementById('calculateBtn');
+      const costResults = document.getElementById('costResults');
+      const selectedCountrySpan = document.getElementById('selectedCountry');
+      const otherCountryCostSpan = document.getElementById('otherCountryCost');
+      const indiaCostSpan = document.getElementById('indiaCost');
+      const savingsAmountSpan = document.getElementById('savingsAmount');
+      const savingsPercentSpan = document.getElementById('savingsPercent');
+
+      // Treatment cost data (India vs other countries in USD) - Data from context.md
+      const costData = {
+        angioplasty: { 
+          india: 4000, 
+          germany: 6000, 
+          singapore: 25000, 
+          spain: 15000, 
+          uae: 8000 
+        },
+        bypass: { 
+          india: 6500, 
+          germany: 20000, 
+          singapore: 30000, 
+          spain: 27000, 
+          uae: 25000 
+        },
+        knee: { 
+          india: 6000, 
+          germany: 18000, 
+          usa: 35000, 
+          australia: 25000, 
+          switzerland: 30000 
+        },
+        hip: { 
+          india: 7000, 
+          germany: 20000, 
+          usa: 30000, 
+          australia: 28000, 
+          switzerland: 25000 
+        },
+        'brain-tumor': { 
+          india: 7500, 
+          germany: 25000, 
+          usa: 100000, 
+          uk: 40000, 
+          singapore: 30000 
+        },
+        ivf: { 
+          india: 3500, 
+          spain: 6500, 
+          czech: 3500, 
+          germany: 5500, 
+          usa: 15000 
+        },
+        cataract: { 
+          india: 1000, 
+          germany: 2000, 
+          singapore: 3500, 
+          spain: 2500, 
+          uae: 3000 
+        },
+        'dental-implant': { 
+          india: 600, 
+          usa: 4000, 
+          germany: 1200, 
+          singapore: 2500, 
+          spain: 1100 
+        }
+      };
+
+      const countryNames = {
+        usa: 'United States',
+        uk: 'United Kingdom',
+        germany: 'Germany',
+        singapore: 'Singapore',
+        spain: 'Spain',
+        uae: 'UAE',
+        australia: 'Australia',
+        switzerland: 'Switzerland',
+        czech: 'Czech Republic'
+      };
+
+      calculateBtn.addEventListener('click', () => {
+        const treatment = treatmentSelect.value;
+        const country = countrySelect.value;
+
+        if (!treatment) {
+          alert('Please select a treatment');
+          return;
+        }
+
+        const data = costData[treatment];
+        if (!data) {
+          alert('Cost data not available for this treatment');
+          return;
+        }
+
+        const indiaCost = data.india;
+        const otherCountryCost = data[country];
+        
+        if (!otherCountryCost) {
+          alert(`Cost data not available for ${countryNames[country]} for this treatment. Please select a different country.`);
+          return;
+        }
+
+        const savings = otherCountryCost - indiaCost;
+        const savingsPercent = Math.round((savings / otherCountryCost) * 100);
+
+        selectedCountrySpan.textContent = countryNames[country];
+        otherCountryCostSpan.textContent = `$${otherCountryCost.toLocaleString()}`;
+        indiaCostSpan.textContent = `$${indiaCost.toLocaleString()}`;
+        savingsAmountSpan.textContent = `$${savings.toLocaleString()}`;
+        savingsPercentSpan.textContent = `Save ${savingsPercent}%`;
+
+        costResults.classList.remove('hidden');
+        costResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    });
+  </script>
+
+  <!-- Video Carousel CSS -->
+  <style>
+    .video-slide {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .video-slide.active {
+      opacity: 1;
+    }
+  </style>
+
+</body>
+
+</html>
