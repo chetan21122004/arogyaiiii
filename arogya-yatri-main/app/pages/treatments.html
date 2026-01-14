@@ -95,6 +95,35 @@ padding: 6px 0;
 white-space: normal;
 }
 
+/* ===== TREATMENTS HERO SECTION ===== */
+.treatments-hero {
+  position: relative;
+  width: 100%;
+}
+
+.treatments-hero img {
+  transition: transform 0.6s ease;
+}
+
+.treatments-hero:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .treatments-hero .relative {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .treatments-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .treatments-hero p {
+    font-size: 1rem;
+  }
+}
+
 </style>
 
 </head>
@@ -242,64 +271,43 @@ white-space: normal;
 
 
 <!-- ================= MAIN CONTENT ================= -->
-<main class="page-wrapper max-w-7xl mx-auto ">
+<main class="page-wrapper w-full mx-auto ">
 
-<!-- ================= WHY CHOOSE INDIA SECTION ================= -->
-<section class="py-16 bg-gradient-to-b from-slate-50 to-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <span class="inline-flex items-center gap-2 text-sm font-medium text-blue-500 mb-3">
-        <i class='bx bx-world'></i>
-        Why Choose India
+
+  <!-- ================= HERO SECTION ================= -->
+<section class="treatments-hero relative overflow-hidden">
+  <div class="relative h-[70vh] min-h-[500px] flex items-center justify-center">
+    <!-- Background Image -->
+    <img 
+      src="../../src/images/instagram/insta_french_discovers.webp" 
+      alt="Medical Treatment"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-teal-900/50"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+      <span class="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-6">
+        <i class='bx bx-plus-medical'></i>
+        Medical Excellence
       </span>
-      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-        India offers advanced medical treatments with internationally trained doctors, cutting-edge technology, and exceptional success rates.
+      
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+        World-Class <span class="text-teal-400">Treatments</span>
+      </h1>
+      
+      <p class="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
+        Discover advanced medical procedures and treatments across India's top NABH-accredited hospitals. 
+        Experience world-class healthcare with transparent pricing and expert care.
       </p>
-    </div>
-
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
-      <div class="text-center p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-lg transition">
-        <div class="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto mb-4">
-          <i class='bx bx-chip text-3xl text-teal-500'></i>
-        </div>
-        <h3 class="font-semibold text-slate-900 mb-2">Advanced Technology</h3>
-        <p class="text-sm text-slate-600">State-of-the-art medical equipment and cutting-edge procedures</p>
-      </div>
-
-      <div class="text-center p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-lg transition">
-        <div class="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto mb-4">
-          <i class='bx bx-user-check text-3xl text-teal-500'></i>
-        </div>
-        <h3 class="font-semibold text-slate-900 mb-2">Expert Doctors</h3>
-        <p class="text-sm text-slate-600">Internationally trained specialists with years of experience</p>
-      </div>
-
-      <div class="text-center p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-lg transition">
-        <div class="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto mb-4">
-          <i class='bx bx-dollar-circle text-3xl text-teal-500'></i>
-        </div>
-        <h3 class="font-semibold text-slate-900 mb-2">Save Up to 80%</h3>
-        <p class="text-sm text-slate-600">Affordable treatments without compromising quality</p>
-      </div>
-
-      <div class="text-center p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-lg transition">
-        <div class="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto mb-4">
-          <i class='bx bx-trophy text-3xl text-teal-500'></i>
-        </div>
-        <h3 class="font-semibold text-slate-900 mb-2">High Success Rates</h3>
-        <p class="text-sm text-slate-600">Proven track record with excellent patient outcomes</p>
-      </div>
-
-      <div class="text-center p-6 rounded-2xl bg-white border border-slate-200 hover:shadow-lg transition">
-        <div class="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto mb-4">
-          <i class='bx bx-building text-3xl text-teal-500'></i>
-        </div>
-        <h3 class="font-semibold text-slate-900 mb-2">Modern Hospitals</h3>
-        <p class="text-sm text-slate-600">NABH/JCI accredited facilities with world-class infrastructure</p>
-      </div>
+      
+     
     </div>
   </div>
 </section>
+
 
 <!-- ================= IMAGE TREATMENTS SECTION ================= -->
 <section class="py-10 bg-white">
@@ -955,448 +963,8 @@ white-space: normal;
   </div>
 </section>
 
-<!-- ================= DETAILED SPECIALTY DESCRIPTIONS ================= -->
-<section class="py-16 bg-slate-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <span class="inline-flex items-center gap-2 text-sm font-medium text-blue-500 mb-3">
-        <i class='bx bx-info-circle'></i>
-        Learn More
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
-        Treatment Specialties <span class="text-teal-500">Explained</span>
-      </h2>
-      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-        Discover what each specialty offers and why India is the ideal destination for your medical treatment.
-      </p>
-    </div>
 
-    <div class="space-y-4">
-      <!-- Cardiology -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="cardiology">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-heart text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Cardiology & Cardiac Surgery</h3>
-              <p class="text-sm text-slate-500 mt-1">Over 90% success rate in cardiac surgeries</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Cardiology involves the diagnosis and treatment of heart-related conditions such as coronary artery disease, arrhythmias, and heart failure. Cardiac surgery includes procedures like bypass surgery, valve repair, and heart transplants to restore heart function. India offers advanced cardiac care with cutting-edge technology and specialist surgeons, ensuring world-class treatment at affordable costs.
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Orthopedics -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="orthopedics">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-bone text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Orthopedics & Joint Replacement</h3>
-              <p class="text-sm text-slate-500 mt-1">85-95% success rate in joint replacement surgeries</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Orthopedics focuses on the musculoskeletal system, addressing injuries and diseases related to bones, joints, ligaments, and muscles. Joint replacement surgeries, such as hip and knee replacements, help restore mobility and reduce pain caused by arthritis or injury. India's orthopedic surgeons use state-of-the-art implants and minimally invasive techniques for faster recovery.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Neurology -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="neurology">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-brain text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Neurology & Neurosurgery</h3>
-              <p class="text-sm text-slate-500 mt-1">80-90% success rate depending on condition complexity</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Neurology deals with disorders of the nervous system, including the brain, spinal cord, and nerves, diagnosing conditions like epilepsy, Parkinson's disease, and stroke. Neurosurgery involves surgical interventions to treat brain tumors, spinal cord injuries, and other neurological disorders. India provides advanced diagnostic tools and innovative neurosurgical procedures for effective treatment.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Oncology -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="oncology">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-dna text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Oncology (Cancer Treatment)</h3>
-              <p class="text-sm text-slate-500 mt-1">70-80% survival rates in common cancers</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Oncology is the branch of medicine dedicated to diagnosing and treating cancer through methods such as chemotherapy, radiation therapy, and surgery. India's top cancer centers offer personalized and multidisciplinary approaches for all cancer types, using latest technology for early detection and effective treatment.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Gastroenterology -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="gastroenterology">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-food-menu text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Gastroenterology & Hepatology</h3>
-              <p class="text-sm text-slate-500 mt-1">Over 85% success with minimally invasive procedures</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Gastroenterology focuses on diseases of the digestive system including the stomach, intestines, liver, and pancreas. Hepatology specializes in liver-related diseases like hepatitis and cirrhosis. India's gastroenterologists use endoscopy, colonoscopy, and advanced imaging to diagnose and treat complex digestive disorders.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Urology -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="urology">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-water text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Urology & Nephrology</h3>
-              <p class="text-sm text-slate-500 mt-1">Exceeds 90% success in kidney transplants</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Urology involves treating urinary tract and male reproductive system disorders, including kidney stones and prostate conditions. Nephrology specializes in kidney health and managing chronic kidney diseases and dialysis. Indian specialists provide cutting-edge treatments, including robotic surgeries and kidney transplants.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Gynecology -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="gynecology">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-baby text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Gynecology & Fertility</h3>
-              <p class="text-sm text-slate-500 mt-1">40-50% IVF success rates</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Gynecology addresses women's reproductive health issues including menstrual disorders, fibroids, and cancers. Fertility treatments involve assisted reproductive technologies such as IVF to help individuals and couples conceive. India is a global hub for affordable and high-quality fertility treatments with excellent success rates.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cosmetic -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="cosmetic">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-face text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Cosmetic & Plastic Surgery</h3>
-              <p class="text-sm text-slate-500 mt-1">85-90% patient satisfaction rate</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Cosmetic and plastic surgery improve and restore appearance and function through procedures like rhinoplasty, liposuction, and reconstructive surgery. India's cosmetic surgeons combine artistic expertise with advanced surgical techniques to deliver natural-looking results at competitive prices.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ophthalmology -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="ophthalmology">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-show text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Ophthalmology (Eye Care)</h3>
-              <p class="text-sm text-slate-500 mt-1">Over 95% success in cataract surgeries</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Ophthalmology specializes in eye health, offering treatments for cataracts, glaucoma, retinal disorders, and laser vision correction. India provides world-renowned eye care with innovative surgeries and comprehensive eye wellness programs.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ENT -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="ent">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-ear text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">ENT (Ear, Nose & Throat)</h3>
-              <p class="text-sm text-slate-500 mt-1">Above 90% success rate</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              ENT specialists diagnose and treat diseases affecting the ear, nose, throat, and related structures like sinusitis, hearing loss, and vocal cord disorders. India offers advanced ENT surgeries, including cochlear implants and minimally invasive procedures.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dental -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="dental">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-smile text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Dental & Oral Surgery</h3>
-              <p class="text-sm text-slate-500 mt-1">95% dental implant success rate</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Dental care in India covers preventive, restorative, and surgical treatments such as root canals, implants, crowns, and orthodontics. Indian dental clinics use cutting-edge technology and maintain strict hygiene standards for safe, effective oral health care.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ayurveda -->
-      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-        <button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition specialty-toggle" data-specialty="ayurveda">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center">
-              <i class='bx bx-leaf text-2xl text-teal-500'></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-slate-900">Ayurveda, Wellness & Rejuvenation</h3>
-              <p class="text-sm text-slate-500 mt-1">Over 80% improvement rate</p>
-            </div>
-          </div>
-          <i class='bx bx-chevron-down text-2xl text-slate-400 transition transform'></i>
-        </button>
-        <div class="hidden specialty-content px-6 pb-6">
-          <div class="pl-16 border-t border-slate-100 pt-6">
-            <p class="text-slate-700 leading-relaxed">
-              Ayurveda is India's ancient holistic healing system integrating herbal treatments, yoga, and detox therapies to restore balance and health. Wellness retreats and rejuvenation therapies help manage lifestyle-related conditions and enhance mental well-being. India's authentic Ayurvedic centers attract global patients seeking natural healing.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= COST COMPARISON SECTION ================= -->
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <span class="inline-flex items-center gap-2 text-sm font-medium text-blue-500 mb-3">
-        <i class='bx bx-dollar-circle'></i>
-        Treatment Costs
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
-        Transparent <span class="text-teal-500">Pricing in India</span>
-      </h2>
-      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-        Estimated treatment costs across leading hospitals in India. All figures are indicative and may vary based on hospital, city, and patient condition.
-      </p>
-    </div>
-
-    <div class="overflow-x-auto rounded-2xl border border-slate-200">
-      <table class="min-w-[900px] w-full border-collapse text-sm">
-        <thead class="bg-slate-50">
-          <tr class="text-left text-slate-700">
-            <th class="px-5 py-4 font-medium border-b border-slate-200">Medical Specialty</th>
-            <th class="px-5 py-4 font-medium border-b border-slate-200">Treatment</th>
-            <th class="px-5 py-4 font-medium border-b border-slate-200">Cost Range (USD)</th>
-            <th class="px-5 py-4 font-medium border-b border-slate-200">Cost Range (INR approx.)</th>
-          </tr>
-        </thead>
-        <tbody class="text-slate-700">
-          <!-- Cardiology -->
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4 font-medium">Cardiology & Cardiac Surgery</td>
-            <td class="px-5 py-4">Angioplasty (PTCA)</td>
-            <td class="px-5 py-4">$3,000 – $5,000</td>
-            <td class="px-5 py-4">₹2,49,000 – ₹4,15,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Bypass Surgery (CABG)</td>
-            <td class="px-5 py-4">$5,500 – $7,000</td>
-            <td class="px-5 py-4">₹4,57,000 – ₹5,81,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Heart Valve Replacement</td>
-            <td class="px-5 py-4">$3,900 – $6,000</td>
-            <td class="px-5 py-4">₹3,23,700 – ₹4,98,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Pacemaker Implantation</td>
-            <td class="px-5 py-4">$11,000 – $22,000</td>
-            <td class="px-5 py-4">₹9,13,000 – ₹18,26,000</td>
-          </tr>
-          <!-- Orthopedics -->
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4 font-medium">Orthopedics & Joint Replacement</td>
-            <td class="px-5 py-4">Total Knee Replacement</td>
-            <td class="px-5 py-4">$5,500 – $6,500</td>
-            <td class="px-5 py-4">₹4,57,000 – ₹5,39,500</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Hip Replacement</td>
-            <td class="px-5 py-4">$2,500 – $5,000</td>
-            <td class="px-5 py-4">₹2,07,500 – ₹4,15,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Spinal Surgery</td>
-            <td class="px-5 py-4">$4,000 – $8,000</td>
-            <td class="px-5 py-4">₹3,32,000 – ₹6,64,000</td>
-          </tr>
-          <!-- Oncology -->
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4 font-medium">Oncology (Cancer Treatment)</td>
-            <td class="px-5 py-4">Chemotherapy (per cycle)</td>
-            <td class="px-5 py-4">$650 – $2,000</td>
-            <td class="px-5 py-4">₹53,950 – ₹1,66,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Radiation Therapy</td>
-            <td class="px-5 py-4">$1,800 – $12,000</td>
-            <td class="px-5 py-4">₹1,49,400 – ₹9,96,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Bone Marrow Transplant</td>
-            <td class="px-5 py-4">$14,500 – $50,000</td>
-            <td class="px-5 py-4">₹12,03,500 – ₹41,50,000</td>
-          </tr>
-          <!-- Gastroenterology -->
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4 font-medium">Gastroenterology & Hepatology</td>
-            <td class="px-5 py-4">Liver Transplant</td>
-            <td class="px-5 py-4">$28,000 – $35,000</td>
-            <td class="px-5 py-4">₹23,24,000 – ₹29,05,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">Bariatric Surgery</td>
-            <td class="px-5 py-4">$4,000 – $8,000</td>
-            <td class="px-5 py-4">₹3,32,000 – ₹6,64,000</td>
-          </tr>
-          <!-- Urology -->
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4 font-medium">Urology & Nephrology</td>
-            <td class="px-5 py-4">Kidney Transplant</td>
-            <td class="px-5 py-4">$25,000 – $35,000</td>
-            <td class="px-5 py-4">₹20,75,000 – ₹29,05,000</td>
-          </tr>
-          <!-- Gynecology -->
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4 font-medium">Gynecology & Fertility</td>
-            <td class="px-5 py-4">IVF / ICSI / Fertility Treatments</td>
-            <td class="px-5 py-4">$2,300 – $5,000</td>
-            <td class="px-5 py-4">₹1,90,900 – ₹4,15,000</td>
-          </tr>
-          <!-- Ophthalmology -->
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4 font-medium">Ophthalmology (Eye Care)</td>
-            <td class="px-5 py-4">Cataract Surgery</td>
-            <td class="px-5 py-4">$700 – $2,000</td>
-            <td class="px-5 py-4">₹58,100 – ₹1,66,000</td>
-          </tr>
-          <tr class="border-b border-slate-100">
-            <td class="px-5 py-4"></td>
-            <td class="px-5 py-4">LASIK / Refractive Surgery</td>
-            <td class="px-5 py-4">$1,000 – $2,500</td>
-            <td class="px-5 py-4">₹83,000 – ₹2,07,500</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="mt-8 text-center">
-      <a href="pricing.html" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-white font-medium transition">
-        <span>View Full Cost Comparison</span>
-        <i class='bx bx-right-arrow-alt text-xl'></i>
-      </a>
-    </div>
-
-    <p class="mt-6 text-xs text-slate-500 text-center max-w-4xl mx-auto">
-      * All costs are indicative and subject to change based on hospital selection, city, treatment complexity, and patient medical condition. Final estimates are shared after detailed medical evaluation.
-    </p>
-  </div>
-</section>
 
 <!-- ================= COUNTRY COMPARISON TABLES ================= -->
 <section class="py-16 bg-slate-50">
