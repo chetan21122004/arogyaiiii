@@ -96,9 +96,11 @@ transparent 100%
 
 @media (max-width: 640px) {
 .brand-marquee {
-animation-duration: 18s;
+animation-duration: s;
 }
 }
+
+
 
 @keyframes grow-line {
 from { height: 0; }
@@ -144,6 +146,19 @@ color: white !important;
   display: flex;
   gap: 5px;
   animation: slide 9s linear infinite;
+}
+
+/* Mobile: Faster animation to maintain same visual speed */
+@media (max-width: 768px) {
+  .slider-track {
+    animation-duration: 3s; /* Much faster on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-track {
+    animation-duration: 2.5s; /* Even faster on very small screens */
+  }
 }
 
 .slider-item {
