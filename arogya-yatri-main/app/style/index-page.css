@@ -143,7 +143,7 @@ color: white !important;
 .slider-track {
   display: flex;
   gap: 5px;
-  animation: slide 15s linear infinite;
+  animation: slide 9s linear infinite;
 }
 
 .slider-item {

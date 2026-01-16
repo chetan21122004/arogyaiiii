@@ -46,6 +46,163 @@
     }
   </script>
 
+  <!-- Mobile Interaction Styles -->
+  <style>
+    /* Mobile feature card styles */
+    .mobile-feature-content {
+      transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out;
+    }
+    
+    .mobile-expand-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .mobile-feature-header:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .mobile-expanded {
+      box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Step animation styles */
+    .step-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    
+    .step-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+    }
+    
+    /* Service card styles */
+    .service-card-content {
+      transition: max-height 0.3s ease-in-out, padding-top 0.3s ease-in-out;
+    }
+    
+    .service-expand-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .service-card-header:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .service-expanded {
+      box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Benefits card styles */
+    .benefits-card-content {
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    
+    .benefits-card-content.expanded {
+      /* Ensure content is visible when expanded */
+    }
+    
+    .benefits-expand-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .benefits-card-header:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    .benefits-expanded {
+      box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Services Slider Styles */
+    .services-slider-container {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+    
+    .services-slider {
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .services-slide {
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .services-indicator {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .services-indicator:hover {
+      transform: scale(1.2);
+    }
+    
+    .services-prev-btn:disabled,
+    .services-next-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .services-prev-btn:not(:disabled):hover,
+    .services-next-btn:not(:disabled):hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Mobile responsive improvements */
+    @media (max-width: 1023px) {
+      .mobile-feature-header {
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        margin: -0.25rem;
+      }
+      
+      .mobile-feature-content {
+        border-top: 1px solid rgba(226, 232, 240, 0.5);
+        margin-top: 0.75rem;
+      }
+      
+      .service-card-header {
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        margin: -0.25rem;
+      }
+      
+      .service-card-content {
+        border-top: 1px solid rgba(226, 232, 240, 0.5);
+        margin-top: 0.75rem;
+      }
+      
+      .benefits-card-header {
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        margin: -0.25rem;
+      }
+      
+      .benefits-card-content {
+        border-top: 1px solid rgba(226, 232, 240, 0.5);
+        margin-top: 0.75rem;
+      }
+    }
+    
+    /* Smooth transitions for all interactive elements */
+    .mobile-feature-card,
+    .mobile-india-card,
+    .mobile-step-card {
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .mobile-feature-card:hover,
+    .mobile-india-card:hover,
+    .mobile-step-card:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+
 </head>
 
 <body class="font-body bg-white text-black">
@@ -238,7 +395,7 @@
 
 
   <!-- Gallery -->
-  <section class="bg-white py-20 relative overflow-hidden">
+  <section class="bg-white py-10 pb-0 relative overflow-hidden">
 
     <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
 
@@ -255,70 +412,72 @@
       <div class="mt-14 relative overflow-hidden">
         <div class="slider-track">
           <div class="slider-item">
-            <img src="src/images/instagram/insta_one.webp" alt="">
+            <img src="./src/images/instagram/insta_one.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_two.webp" alt="">
+            <img src="./src/images/instagram/insta_two.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_three.webp" alt="">
+            <img src="./src/images/instagram/insta_three.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_four.webp" alt="">
+            <img src="./src/images/instagram/insta_four.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_five.webp" alt="">
+            <img src="./src/images/instagram/insta_five.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_six.webp" alt="">
+            <img src="./src/images/instagram/insta_six.webp" alt="">
           </div>
-
+  
           <!-- duplicate -->
           <div class="slider-item">
-            <img src="src/images/instagram/insta_seven.webp" alt="">
+            <img src="./src/images/instagram/insta_seven.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_eight.webp" alt="">
+            <img src="./src/images/instagram/insta_eight.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_nine.webp" alt="">
+            <img src="./src/images/instagram/insta_nine.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_ten.webp" alt="">
+            <img src="./src/images/instagram/insta_ten.webp" alt="">
           </div>
           <div class="slider-item">
-            <img src="src/images/instagram/insta_eleven.webp" alt="">
+            <img src="./src/images/instagram/insta_eleven.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_twelve.webp" alt="">
+            <img src="./src/images/instagram/insta_twelve.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_french_discovers.webp" alt="">
+            <img src="./src/images/instagram/insta_french_discovers.webp" alt="">
           </div>
-
+  
           <div class="slider-item">
-            <img src="src/images/instagram/insta_french_discovers_two.webp" alt="">
+            <img src="./src/images/instagram/insta_french_discovers_two.webp" alt="">
           </div>
-
+  
         </div>
       </div>
+      
+      
     </div>
   </section>
 
 
 
   <!-- WHY CHOOSE AROGYA YATRI -->
-  <section class="relative py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
+  <section class="relative py-5 bg-gradient-to-br from-slate-50 via-white to-slate-50">
     <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=" 60" height="60" viewBox="0 0 60 60"
       xmlns="http://www.w3.org/2000/svg" %3E%3Cg fill="none" fill-rule="evenodd" %3E%3Cg fill="%23f1f5f9"
       fill-opacity="0.4" %3E%3Ccircle cx="30" cy="30" r="1" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
@@ -341,13 +500,28 @@
       <div class="grid lg:grid-cols-2 gap-8 mb-16">
 
         <!-- Feature 1 -->
-        <div class="group relative">
+        <div class="group relative mobile-feature-card" data-feature="multilingual">
           <div
             class="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
           </div>
           <div
-            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="flex items-start gap-6">
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer mobile-feature-header">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-world text-lg text-white'></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900">Multilingual Support</h3>
+                  <span class="text-xs text-teal-600">(EWAN Powered)</span>
+                </div>
+              </div>
+              <i class='bx bx-chevron-down text-xl text-slate-400 mobile-expand-icon transition-transform duration-300'></i>
+            </div>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-6">
               <div class="flex-shrink-0">
                 <div
                   class="w-16 h-16 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-lg">
@@ -383,17 +557,58 @@
                 </div>
               </div>
             </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden mobile-feature-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-slate-600 mb-4 leading-relaxed text-sm">
+                Seamless communication in 120+ languages with trained interpreters and 24/7 multilingual assistance
+                throughout your medical journey.
+              </p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-teal-500'></i>
+                  <span class="text-slate-600">120+ languages</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-teal-500'></i>
+                  <span class="text-slate-600">24/7 assistance</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-teal-500'></i>
+                  <span class="text-slate-600">Hospital interpreters</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-teal-500'></i>
+                  <span class="text-slate-600">Cultural sensitivity</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Feature 2 -->
-        <div class="group relative">
+        <div class="group relative mobile-feature-card" data-feature="savings">
           <div
             class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
           </div>
           <div
-            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="flex items-start gap-6">
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer mobile-feature-header">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-dollar-circle text-lg text-white'></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900">Save Up to 80%</h3>
+                  <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Best Value</span>
+                </div>
+              </div>
+              <i class='bx bx-chevron-down text-xl text-slate-400 mobile-expand-icon transition-transform duration-300'></i>
+            </div>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-6">
               <div class="flex-shrink-0">
                 <div
                   class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-lg">
@@ -429,17 +644,58 @@
                 </div>
               </div>
             </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden mobile-feature-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-slate-600 mb-4 leading-relaxed text-sm">
+                World-class treatment at NABH-accredited hospitals with transparent pricing and no hidden costs,
+                delivering exceptional value.
+              </p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-orange-500'></i>
+                  <span class="text-slate-600">80% cost savings</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-orange-500'></i>
+                  <span class="text-slate-600">NABH accredited</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-orange-500'></i>
+                  <span class="text-slate-600">Transparent pricing</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-orange-500'></i>
+                  <span class="text-slate-600">Quality assured</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Feature 3 -->
-        <div class="group relative">
+        <div class="group relative mobile-feature-card" data-feature="postcare">
           <div
             class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
           </div>
           <div
-            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="flex items-start gap-6">
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer mobile-feature-header">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-package text-lg text-white'></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900">Post-Treatment Care</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Continuous</span>
+                </div>
+              </div>
+              <i class='bx bx-chevron-down text-xl text-slate-400 mobile-expand-icon transition-transform duration-300'></i>
+            </div>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-6">
               <div class="flex-shrink-0">
                 <div
                   class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-lg">
@@ -475,17 +731,58 @@
                 </div>
               </div>
             </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden mobile-feature-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-slate-600 mb-4 leading-relaxed text-sm">
+                Comprehensive follow-up care with remote consultations, medicine delivery, and continuous recovery
+                monitoring after you return home.
+              </p>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-blue-500'></i>
+                  <span class="text-slate-600">Remote follow-ups</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-blue-500'></i>
+                  <span class="text-slate-600">Medicine delivery</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-blue-500'></i>
+                  <span class="text-slate-600">Secure portal</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class='bx bx-check text-blue-500'></i>
+                  <span class="text-slate-600">Recovery monitoring</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Feature 4 -->
-        <div class="group relative">
+        <div class="group relative mobile-feature-card" data-feature="companion">
           <div
             class="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300">
           </div>
           <div
-            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="flex items-start gap-6">
+            class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer mobile-feature-header">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center shadow-lg">
+                  <i class='bx bx-user-plus text-lg text-white'></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900">Companion Support</h3>
+                  <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">Free*</span>
+                </div>
+              </div>
+              <i class='bx bx-chevron-down text-xl text-slate-400 mobile-expand-icon transition-transform duration-300'></i>
+            </div>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-6">
               <div class="flex-shrink-0">
                 <div
                   class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center shadow-lg">
@@ -521,6 +818,15 @@
                 </div>
               </div>
             </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden mobile-feature-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-slate-600 mb-4 leading-relaxed text-sm">
+                Bring your loved one along with comprehensive travel arrangements, visa assistance, and shared
+                accommodation options.
+              </p>
+              
+            </div>
           </div>
         </div>
 
@@ -530,59 +836,144 @@
       <div class="grid md:grid-cols-3 gap-6">
 
         <!-- Service 1 -->
-        <div
-          class="group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-violet-100 flex items-center justify-center group-hover:bg-violet-200 transition-colors">
-              <i class='bx bx-support text-xl text-violet-600'></i>
+        <div class="group relative service-expandable-card" data-service="assistance">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between md:hidden mb-3 cursor-pointer service-card-header">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-violet-100 flex items-center justify-center group-hover:bg-violet-200 transition-colors">
+                  <i class='bx bx-support text-lg text-violet-600'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">End-to-End Assistance</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 service-expand-icon transition-transform duration-300'></i>
             </div>
-            <h4 class="font-semibold text-slate-900">End-to-End Assistance</h4>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden md:flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-violet-100 flex items-center justify-center group-hover:bg-violet-200 transition-colors">
+                <i class='bx bx-support text-xl text-violet-600'></i>
+              </div>
+              <h4 class="font-semibold text-slate-900">End-to-End Assistance</h4>
+            </div>
+            
+            <!-- Desktop Content -->
+            <div class="hidden md:block">
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Single point of contact for medical care, travel arrangements, accommodation, and cultural experiences
+                throughout your journey.
+              </p>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="md:hidden service-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                Single point of contact for medical care, travel arrangements, accommodation, and cultural experiences
+                throughout your journey.
+              </p>
+           
+            </div>
           </div>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Single point of contact for medical care, travel arrangements, accommodation, and cultural experiences
-            throughout your journey.
-          </p>
         </div>
 
         <!-- Service 2 -->
-        <div
-          class="group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-rose-100 flex items-center justify-center group-hover:bg-rose-200 transition-colors">
-              <i class='bx bx-file-blank text-xl text-rose-600'></i>
+        <div class="group relative service-expandable-card" data-service="analysis">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between md:hidden mb-3 cursor-pointer service-card-header">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center group-hover:bg-rose-200 transition-colors">
+                  <i class='bx bx-file-blank text-lg text-rose-600'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Free Report Analysis</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 service-expand-icon transition-transform duration-300'></i>
             </div>
-            <h4 class="font-semibold text-slate-900">Free Report Analysis</h4>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden md:flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-rose-100 flex items-center justify-center group-hover:bg-rose-200 transition-colors">
+                <i class='bx bx-file-blank text-xl text-rose-600'></i>
+              </div>
+              <h4 class="font-semibold text-slate-900">Free Report Analysis</h4>
+            </div>
+            
+            <!-- Desktop Content -->
+            <div class="hidden md:block">
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Expert panel review of your medical reports within 24-48 hours with honest recommendations and transparent
+                cost estimates.
+              </p>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="md:hidden service-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                Expert panel review of your medical reports within 24-48 hours with honest recommendations and transparent
+                cost estimates.
+              </p>
+          
+            </div>
           </div>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Expert panel review of your medical reports within 24-48 hours with honest recommendations and transparent
-            cost estimates.
-          </p>
         </div>
 
         <!-- Service 3 -->
-        <div
-          class="group relative bg-white rounded-xl p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center group-hover:bg-amber-200 transition-colors">
-              <i class='bx bx-dish text-xl text-amber-600'></i>
+        <div class="group relative service-expandable-card" data-service="nutrition">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between md:hidden mb-3 cursor-pointer service-card-header">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center group-hover:bg-amber-200 transition-colors">
+                  <i class='bx bx-dish text-lg text-amber-600'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Personalized Nutrition</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 service-expand-icon transition-transform duration-300'></i>
             </div>
-            <h4 class="font-semibold text-slate-900">Personalized Nutrition</h4>
+            
+            <!-- Desktop Layout -->
+            <div class="hidden md:flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center group-hover:bg-amber-200 transition-colors">
+                <i class='bx bx-dish text-xl text-amber-600'></i>
+              </div>
+              <h4 class="font-semibold text-slate-900">Personalized Nutrition</h4>
+            </div>
+            
+            <!-- Desktop Content -->
+            <div class="hidden md:block">
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Customized meal plans by certified dieticians aligned with your treatment, cultural preferences, and dietary
+                restrictions.
+              </p>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="md:hidden service-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                Customized meal plans by certified dieticians aligned with your treatment, cultural preferences, and dietary
+                restrictions.
+              </p>
+           
+            </div>
           </div>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Customized meal plans by certified dieticians aligned with your treatment, cultural preferences, and dietary
-            restrictions.
-          </p>
         </div>
 
       </div>
 
       <!-- CTA Section -->
       <div class="mt-16 text-center">
+        <!-- Desktop CTA -->
         <div
-          class=" hidden  sm:inline-flex items-center gap-4 bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl p-8 text-white">
+          class="hidden sm:inline-flex items-center gap-4 bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl p-8 text-white">
           <div class="flex-1">
             <h3 class="text-xl font-semibold mb-2">Ready to Start Your Medical Journey?</h3>
             <p class="text-white/90">Get expert guidance and transparent pricing for your treatment in India.</p>
@@ -595,6 +986,24 @@
             </a>
             <a href="app/pages/treatments.html"
               class="inline-flex items-center gap-2 px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition">
+              <i class='bx bx-dollar-circle'></i>
+              View Treatments & Pricing
+            </a>
+          </div>
+        </div>
+        
+        <!-- Mobile CTA -->
+        <div class="sm:hidden bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl p-6 text-white">
+          <h3 class="text-lg font-semibold mb-2">Ready to Start Your Medical Journey?</h3>
+          <p class="text-white/90 text-sm mb-4">Get expert guidance and transparent pricing for your treatment in India.</p>
+          <div class="space-y-3">
+            <a href="#"
+              class="openConsultantModal w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-teal-600 rounded-xl font-semibold hover:bg-slate-50 transition">
+              <i class='bx bx-calendar'></i>
+              Book Consultation
+            </a>
+            <a href="app/pages/treatments.html"
+              class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/30 text-white rounded-xl font-semibold hover:bg-white/10 transition">
               <i class='bx bx-dollar-circle'></i>
               View Treatments & Pricing
             </a>
@@ -687,11 +1096,11 @@
   </section>
 
   <!-- WHY CHOOSE INDIA -->
-  <section class="relative py-20 bg-gradient-to-br from-slate-50 via-white to-teal-50/30">
+  <section class="relative py-5 bg-gradient-to-br from-slate-50 via-white to-teal-50/30">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- Header -->
-      <div class="text-center mb-16">
+      <div class="text-center mb-6">
         <p class="text-xs tracking-widest uppercase text-teal-500 font-medium mb-3">
           Medical Travel Advantage
         </p>
@@ -705,7 +1114,7 @@
       </div>
 
       <!-- Key Statistics -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
         <div
           class="text-center p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
           <div class="text-3xl font-bold text-teal-600 mb-2">80%</div>
@@ -729,139 +1138,315 @@
       </div>
 
       <!-- Key Benefits - Simplified Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
 
         <!-- Government Support -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-shield-quarter text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="government">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-shield-quarter text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Government 'Heal in India' Program</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">Government 'Heal in India' Program</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Official support with simplified e-Medical visas, fast-track approvals, and dedicated helplines.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-shield-quarter text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Government 'Heal in India' Program</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Official support with simplified e-Medical visas, fast-track approvals, and dedicated helplines.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Official support with simplified e-Medical visas, fast-track approvals, and dedicated helplines for international patients seeking medical treatment in India.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Zero Waiting -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-time text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="waiting">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-time text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Zero Waiting Period</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">Zero Waiting Period</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Immediate care and faster recovery with no waiting lists for treatments and procedures.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-time text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Zero Waiting Period</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Immediate care and faster recovery with no waiting lists for treatments and procedures.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Immediate care and faster recovery with no waiting lists for treatments and procedures. Get the medical attention you need without delays.
               </p>
             </div>
           </div>
         </div>
 
         <!-- World-Class Care -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-health text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="healthcare">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-health text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">World-Class Healthcare</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">World-Class Healthcare</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                NABH/JCI accredited hospitals with internationally trained doctors and cutting-edge technology.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-health text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">World-Class Healthcare</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  NABH/JCI accredited hospitals with internationally trained doctors and cutting-edge technology.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                NABH/JCI accredited hospitals with internationally trained doctors and cutting-edge technology. Experience healthcare standards that match global best practices.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Affordable Quality -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-dollar-circle text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="affordable">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-dollar-circle text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Affordable Excellence</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">Affordable Excellence</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                High-quality treatments at affordable costs without compromising on safety or outcomes.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-dollar-circle text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Affordable Excellence</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  High-quality treatments at affordable costs without compromising on safety or outcomes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                High-quality treatments at affordable costs without compromising on safety or outcomes. Save significantly while receiving world-class medical care.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Language & Communication -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-world text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="communication">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-world text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Clear Communication</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">Clear Communication</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                English-speaking medical teams and professional interpreters for seamless communication.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-world text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Clear Communication</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  English-speaking medical teams and professional interpreters for seamless communication.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                English-speaking medical teams and professional interpreters for seamless communication. Never worry about language barriers during your treatment.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Comprehensive Support -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-support text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="support">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-support text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Complete Support System</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">Complete Support System</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                24/7 personalized care, one-stop MVT portal, and comprehensive concierge services.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-support text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Complete Support System</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  24/7 personalized care, one-stop MVT portal, and comprehensive concierge services.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                24/7 personalized care, one-stop MVT portal, and comprehensive concierge services. Complete assistance from arrival to departure and beyond.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Holistic Healing -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-spa text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="holistic">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-spa text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Holistic Healing Experience</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">Holistic Healing Experience</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Combine modern medicine with Ayurveda, Yoga, and wellness traditions in scenic recovery destinations.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-spa text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Holistic Healing Experience</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Combine modern medicine with Ayurveda, Yoga, and wellness traditions in scenic recovery destinations.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Combine modern medicine with Ayurveda, Yoga, and wellness traditions in scenic recovery destinations. Heal your body, mind, and spirit in India's serene environments.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Safe & Connected -->
-        <div
-          class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
-          <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md">
-              <i class='bx bx-shield text-xl text-white'></i>
+        <div class="group relative benefits-expandable-card" data-benefit="safety">
+          <div
+            class="bg-white rounded-xl p-4 sm:p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <!-- Mobile Header (Clickable) -->
+            <div class="flex items-center justify-between lg:hidden mb-3 cursor-pointer benefits-card-header">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md flex-shrink-0">
+                  <i class='bx bx-shield text-sm text-white'></i>
+                </div>
+                <h4 class="font-semibold text-slate-900 text-sm">Safe & Well-Connected</h4>
+              </div>
+              <i class='bx bx-chevron-down text-lg text-slate-400 benefits-expand-icon transition-transform duration-300'></i>
             </div>
-            <div class="flex-1">
-              <h4 class="font-semibold text-slate-900 mb-2">Safe & Well-Connected</h4>
-              <p class="text-sm text-slate-600 leading-relaxed">
-                Safe cities with fast-track airport assistance, interpreter support, and excellent connectivity.
+            
+            <!-- Desktop Layout -->
+            <div class="hidden lg:flex items-start gap-3 sm:gap-4">
+              <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md flex-shrink-0">
+                <i class='bx bx-shield text-lg sm:text-xl text-white'></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Safe & Well-Connected</h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Safe cities with fast-track airport assistance, interpreter support, and excellent connectivity.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mobile Expandable Content -->
+            <div class="lg:hidden benefits-card-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Safe cities with fast-track airport assistance, interpreter support, and excellent connectivity. Travel with confidence in secure, well-connected medical destinations.
               </p>
             </div>
           </div>
@@ -873,7 +1458,7 @@
   </section>
 
   <!-- OUR SERVICES -->
-  <section class="relative bg-slate-50 py-24 border-t border-slate-100">
+  <section class="relative bg-slate-50 py-4 border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- Header -->
@@ -889,219 +1474,240 @@
         </p>
       </div>
 
-      <!-- Services Grid - Simplified Layout -->
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-        <!-- 1. Medical Coordination -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-clinic text-2xl text-white'></i>
+      <!-- Services Slider - 2x2 Layout -->
+      <div class="relative max-w-4xl mx-auto">
+        <!-- Slider Container -->
+        <div class="services-slider-container overflow-hidden rounded-2xl">
+          <div class="services-slider flex transition-transform duration-500 ease-in-out">
+            
+            <!-- Slide 1 (Cards 1-4) -->
+            <div class="services-slide w-full flex-shrink-0 p-4">
+              <div class="grid grid-cols-2 gap-3 sm:gap-4 h-full">
+                
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-clinic text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Medical Coordination</h3>
+                    <span class="text-xs bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full">Core</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Medical Coordination</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      We manage your entire healthcare journey with top hospitals and expert doctors.
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bxs-plane-alt text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Visa & Travel</h3>
+                    <span class="text-xs bg-sky-100 text-sky-700 px-2 py-0.5 rounded-full">Essential</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Visa & Travel</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Hassle-free visa processing and travel arrangements for your medical trip.
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-home text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Accommodation</h3>
+                    <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Comfort</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Accommodation</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Handpicked accommodations near hospitals for your comfort and convenience.
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Language Support -->
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-world text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Language Support</h3>
+                    <span class="text-xs bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full">120+ Languages</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Language Support</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Multilingual team ensuring clear communication throughout your journey.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Medical Coordination</h3>
-            <span class="text-xs bg-teal-100 text-teal-700 px-3 py-1 rounded-full">Core Service</span>
+            
+            <!-- Slide 2 (Cards 5-8) -->
+            <div class="services-slide w-full flex-shrink-0 p-4">
+              <div class="grid grid-cols-2 gap-3 sm:gap-4 h-full">
+                
+                <!-- Companion Planning -->
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-user-plus text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Companion Planning</h3>
+                    <span class="text-xs bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full">Free*</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Companion Planning</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Travel and stay arrangements for your loved ones to be with you.
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Tourism Planning -->
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-map text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Tourism Planning</h3>
+                    <span class="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">Cultural</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Tourism Planning</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Explore India's culture and beauty with customized tourism plans.
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Post-Recovery Care -->
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-support text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Post-Recovery Care</h3>
+                    <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full">Follow-up</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Post-Recovery Care</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Continuous care and follow-up consultations after your treatment.
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Second Opinion -->
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-file-find text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Second Opinion</h3>
+                    <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Free*</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Second Opinion</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Expert second opinions from renowned medical specialists.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 3 (Cards 9-10) -->
+            <div class="services-slide w-full flex-shrink-0 p-4">
+              <div class="grid grid-cols-2 gap-3 sm:gap-4 h-full">
+                
+                <!-- Medicine Courier -->
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-package text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Medicine Courier</h3>
+                    <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">Global</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Medicine Courier</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Safe medicine delivery to your home for uninterrupted treatment.
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Clinical Nutrition -->
+                <div class="service-card bg-white rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[140px] sm:min-h-[160px] relative overflow-hidden cursor-pointer">
+                  <div class="flex flex-col items-center text-center flex-grow justify-center">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-md mb-2">
+                      <i class='bx bx-dish text-sm sm:text-base text-white'></i>
+                    </div>
+                    <h3 class="text-xs sm:text-sm font-semibold text-slate-900 mb-1 leading-tight">Clinical Nutrition</h3>
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Expert</span>
+                  </div>
+                  
+                  <!-- Overlay with detailed info -->
+                  <div class="service-overlay absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-3 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+                    <h3 class="text-sm sm:text-base font-semibold mb-2 text-center">Clinical Nutrition</h3>
+                    <p class="text-white/95 text-xs leading-relaxed text-center">
+                      Personalized nutrition plans from certified clinical dieticians.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Navigation Controls -->
+        <div class="flex items-center justify-center mt-6 gap-4">
+          <!-- Previous Button -->
+          <button class="services-prev-btn bg-white hover:bg-slate-50 border border-slate-200 rounded-full p-2 shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+            <i class='bx bx-chevron-left text-xl text-slate-600'></i>
+          </button>
+          
+          <!-- Slide Indicators -->
+          <div class="flex gap-2">
+            <button class="services-indicator w-2 h-2 rounded-full bg-teal-500 transition-all duration-300" data-slide="0"></button>
+            <button class="services-indicator w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-300" data-slide="1"></button>
+            <button class="services-indicator w-2 h-2 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-300" data-slide="2"></button>
           </div>
           
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Medical Coordination</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              We manage your entire healthcare journey, connecting you with top NABH-accredited hospitals and expert
-              doctors for seamless treatment plans.
-            </p>
-            
-          </div>
+          <!-- Next Button -->
+          <button class="services-next-btn bg-white hover:bg-slate-50 border border-slate-200 rounded-full p-2 shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+            <i class='bx bx-chevron-right text-xl text-slate-600'></i>
+          </button>
         </div>
-
-        <!-- 2. Visa & Travel Assistance -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bxs-plane-alt text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Visa & Travel</h3>
-            <span class="text-xs bg-sky-100 text-sky-700 px-3 py-1 rounded-full">Essential</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Visa & Travel</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              Get hassle-free visa processing and travel support, including visa facilitation and travel arrangements
-              tailored to your medical trip.
-            </p>
-           
-          </div>
-        </div>
-
-        <!-- 3. Accommodation -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-home text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Accommodation</h3>
-            <span class="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">Comfort</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Accommodation</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              Stay comfortably with our handpicked accommodations near hospitals, suited to your budget and preferences
-              for a stress-free visit.
-            </p>
-           
-          </div>
-        </div>
-
-        <!-- 4. Language Support -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-world text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Language Support</h3>
-            <span class="text-xs bg-violet-100 text-violet-700 px-3 py-1 rounded-full">120+ Languages</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-violet-500 to-violet-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Language Support</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              From arrival to departure, our multilingual team ensures clear communication, helping you navigate medical
-              and travel processes smoothly.
-            </p>
-           
-          </div>
-        </div>
-
-        <!-- 5. Companion Planning -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-user-plus text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Companion Planning</h3>
-            <span class="text-xs bg-rose-100 text-rose-700 px-3 py-1 rounded-full">Free*</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-rose-500 to-rose-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Companion Planning</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              We organize travel and stay plans for your companions, ensuring loved ones are with you every step for
-              comfort and care.
-            </p>
-           
-          </div>
-        </div>
-
-        <!-- 6. Tourism Planning -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-map text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Tourism Planning</h3>
-            <span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full">Cultural</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Tourism Planning</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              Explore India's rich culture and scenic beauty with customized tourism plans crafted to complement your
-              medical recovery.
-            </p>
-            
-          </div>
-        </div>
-
-        <!-- 7. Post-Recovery Consultation -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-support text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Post-Recovery Care</h3>
-            <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Follow-up</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Post-Recovery Care</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              Stay connected with doctors through follow-up consultations for continuous care and smooth recovery after
-              your treatment.
-            </p>
-           
-          </div>
-        </div>
-
-        <!-- 8. Second Opinion -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-file-find text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Second Opinion</h3>
-            <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Free*</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Second Opinion</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              Access expert second opinions from renowned medical specialists to make informed decisions about your
-              healthcare.
-            </p>
-           
-          </div>
-        </div>
-
-        <!-- 9. Medicine Courier -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-package text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Medicine Courier</h3>
-            <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Global</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Medicine Courier</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              Receive your medicines delivered safely to your home, ensuring uninterrupted treatment even after travel.
-            </p>
-            
-          </div>
-        </div>
-
-        <!-- 10. Clinical Dietitian Support -->
-        <div class="service-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full min-h-[280px] relative overflow-hidden cursor-pointer">
-          <div class="flex flex-col items-center text-center flex-grow justify-center">
-            <div
-              class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-md mb-4">
-              <i class='bx bx-dish text-2xl text-white'></i>
-            </div>
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Clinical Nutrition</h3>
-            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Expert</span>
-          </div>
-          <!-- Overlay with detailed info -->
-          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
-            <h3 class="text-xl font-semibold mb-3 text-center">Clinical Nutrition</h3>
-            <p class="text-white/95 text-sm leading-relaxed mb-4 text-center">
-              Receive personalized nutrition plans from certified clinical dieticians, tailored to your treatment and
-              recovery needs.
-            </p>
-           
-          </div>
-        </div>
-
+        
       </div>
 
       <!-- Call to Action -->
@@ -1158,17 +1764,17 @@
         </div>
 
         <!-- STEPS -->
-        <div class="grid grid-cols-1 md:grid-cols-6 gap-12 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-6 sm:gap-8 md:gap-12 relative z-10">
 
           <!-- STEP 1 -->
           <div
-            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
-            <div class="step-icon bg-teal-50 text-teal-600">
-              <i class="bx bx-file"></i>
+            class="step-card flex md:flex-col items-start md:items-center gap-3 sm:gap-5 text-left md:text-center opacity-0 translate-y-6 mobile-step-card">
+            <div class="step-icon bg-teal-50 text-teal-600 w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+              <i class="bx bx-file text-lg sm:text-xl"></i>
             </div>
-            <div>
-              <h3 class="step-title">Step 1: Share Your Medical Need</h3>
-              <p class="step-desc">
+            <div class="flex-1 min-w-0">
+              <h3 class="step-title text-sm sm:text-base font-semibold text-slate-900 mb-2">Step 1: Share Your Medical Need</h3>
+              <p class="step-desc text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Fill out our online form or WhatsApp us your reports, and our care team connects with you within 24
                 hours.
               </p>
@@ -1177,13 +1783,13 @@
 
           <!-- STEP 2 -->
           <div
-            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
-            <div class="step-icon bg-sky-50 text-sky-600">
-              <i class="bx bx-clinic"></i>
+            class="step-card flex md:flex-col items-start md:items-center gap-3 sm:gap-5 text-left md:text-center opacity-0 translate-y-6 mobile-step-card">
+            <div class="step-icon bg-sky-50 text-sky-600 w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+              <i class="bx bx-clinic text-lg sm:text-xl"></i>
             </div>
-            <div>
-              <h3 class="step-title">Step 2: Get Expert Opinions & Cost Estimates</h3>
-              <p class="step-desc">
+            <div class="flex-1 min-w-0">
+              <h3 class="step-title text-sm sm:text-base font-semibold text-slate-900 mb-2">Step 2: Get Expert Opinions & Cost Estimates</h3>
+              <p class="step-desc text-xs sm:text-sm text-slate-600 leading-relaxed">
                 We connect with trusted Indian hospitals and specialists to get you personalized treatment plans and
                 transparent pricing.
               </p>
@@ -1192,13 +1798,13 @@
 
           <!-- STEP 3 -->
           <div
-            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
-            <div class="step-icon bg-indigo-50 text-indigo-600">
-              <i class="bx bxs-plane-alt"></i>
+            class="step-card flex md:flex-col items-start md:items-center gap-3 sm:gap-5 text-left md:text-center opacity-0 translate-y-6 mobile-step-card">
+            <div class="step-icon bg-indigo-50 text-indigo-600 w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+              <i class="bx bxs-plane-alt text-lg sm:text-xl"></i>
             </div>
-            <div>
-              <h3 class="step-title">Step 3: Visa, Flights & Accommodation - All Arranged</h3>
-              <p class="step-desc">
+            <div class="flex-1 min-w-0">
+              <h3 class="step-title text-sm sm:text-base font-semibold text-slate-900 mb-2">Step 3: Visa, Flights & Accommodation - All Arranged</h3>
+              <p class="step-desc text-xs sm:text-sm text-slate-600 leading-relaxed">
                 We help you apply for your medical visa, plan travel, and arrange safe accommodation with interpreter
                 support from Ewan.
               </p>
@@ -1207,13 +1813,13 @@
 
           <!-- STEP 4 -->
           <div
-            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
-            <div class="step-icon bg-emerald-50 text-emerald-600">
-              <i class="bx bx-user-check"></i>
+            class="step-card flex md:flex-col items-start md:items-center gap-3 sm:gap-5 text-left md:text-center opacity-0 translate-y-6 mobile-step-card">
+            <div class="step-icon bg-emerald-50 text-emerald-600 w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+              <i class="bx bx-user-check text-lg sm:text-xl"></i>
             </div>
-            <div>
-              <h3 class="step-title">Step 4: Warm Welcome & Hassle-Free Admission</h3>
-              <p class="step-desc">
+            <div class="flex-1 min-w-0">
+              <h3 class="step-title text-sm sm:text-base font-semibold text-slate-900 mb-2">Step 4: Warm Welcome & Hassle-Free Admission</h3>
+              <p class="step-desc text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Our team receives you at the airport, assists with check-in, and ensures smooth coordination during your
                 treatment.
               </p>
@@ -1222,13 +1828,13 @@
 
           <!-- STEP 5 -->
           <div
-            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
-            <div class="step-icon bg-rose-50 text-rose-600">
-              <i class="bx bx-leaf"></i>
+            class="step-card flex md:flex-col items-start md:items-center gap-3 sm:gap-5 text-left md:text-center opacity-0 translate-y-6 mobile-step-card">
+            <div class="step-icon bg-rose-50 text-rose-600 w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+              <i class="bx bx-leaf text-lg sm:text-xl"></i>
             </div>
-            <div>
-              <h3 class="step-title">Step 5: Heal, Relax & Discover India</h3>
-              <p class="step-desc">
+            <div class="flex-1 min-w-0">
+              <h3 class="step-title text-sm sm:text-base font-semibold text-slate-900 mb-2">Step 5: Heal, Relax & Discover India</h3>
+              <p class="step-desc text-xs sm:text-sm text-slate-600 leading-relaxed">
                 After treatment, enjoy a recovery stay, Ayurveda therapies, or local sightseeing - blending care with
                 culture.
               </p>
@@ -1237,13 +1843,13 @@
 
           <!-- STEP 6 -->
           <div
-            class="step-card flex md:flex-col items-start md:items-center gap-5 text-left md:text-center opacity-0 translate-y-6">
-            <div class="step-icon bg-violet-50 text-violet-600">
-              <i class="bx bx-support"></i>
+            class="step-card flex md:flex-col items-start md:items-center gap-3 sm:gap-5 text-left md:text-center opacity-0 translate-y-6 mobile-step-card">
+            <div class="step-icon bg-violet-50 text-violet-600 w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+              <i class="bx bx-support text-lg sm:text-xl"></i>
             </div>
-            <div>
-              <h3 class="step-title">Step 6: Follow-Up and Continued Care</h3>
-              <p class="step-desc">
+            <div class="flex-1 min-w-0">
+              <h3 class="step-title text-sm sm:text-base font-semibold text-slate-900 mb-2">Step 6: Follow-Up and Continued Care</h3>
+              <p class="step-desc text-xs sm:text-sm text-slate-600 leading-relaxed">
                 We stay in touch even after you return home, sharing medical reports, arranging follow-ups, and sending
                 essential medicines to support your recovery.
               </p>
@@ -1276,6 +1882,197 @@
       );
 
       observer.observe(steps[0]);
+    </script>
+
+    <!-- MOBILE INTERACTION SCRIPT -->
+    <script>
+      // Mobile feature card expansion functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const featureCards = document.querySelectorAll('.mobile-feature-card');
+        
+        featureCards.forEach(card => {
+          const header = card.querySelector('.mobile-feature-header');
+          const content = card.querySelector('.mobile-feature-content');
+          const icon = card.querySelector('.mobile-expand-icon');
+          
+          if (header && content && icon) {
+            header.addEventListener('click', function() {
+              const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+              
+              if (isExpanded) {
+                // Collapse
+                content.style.maxHeight = '0px';
+                content.style.paddingTop = '0px';
+                icon.style.transform = 'rotate(0deg)';
+                card.classList.remove('mobile-expanded');
+              } else {
+                // Expand
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.paddingTop = '12px';
+                icon.style.transform = 'rotate(180deg)';
+                card.classList.add('mobile-expanded');
+              }
+            });
+          }
+        });
+      });
+      
+      // Service card expansion functionality
+      const serviceCards = document.querySelectorAll('.service-expandable-card');
+      
+      serviceCards.forEach(card => {
+        const header = card.querySelector('.service-card-header');
+        const content = card.querySelector('.service-card-content');
+        const icon = card.querySelector('.service-expand-icon');
+        
+        if (header && content && icon) {
+          header.addEventListener('click', function() {
+            const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+            
+            if (isExpanded) {
+              // Collapse
+              content.style.maxHeight = '0px';
+              content.style.paddingTop = '0px';
+              icon.style.transform = 'rotate(0deg)';
+              card.classList.remove('service-expanded');
+            } else {
+              // Expand
+              content.style.maxHeight = content.scrollHeight + 'px';
+              content.style.paddingTop = '12px';
+              icon.style.transform = 'rotate(180deg)';
+              card.classList.add('service-expanded');
+            }
+          });
+        }
+      });
+      
+      // Benefits card expansion functionality
+      const benefitsCards = document.querySelectorAll('.benefits-expandable-card');
+      
+      benefitsCards.forEach(card => {
+        const header = card.querySelector('.benefits-card-header');
+        const content = card.querySelector('.benefits-card-content');
+        const icon = card.querySelector('.benefits-expand-icon');
+        
+        if (header && content && icon) {
+          // Function to calculate and set proper height
+          function updateContentHeight() {
+            if (content.classList.contains('expanded')) {
+              // Temporarily remove constraints to measure natural height
+              const currentMaxHeight = content.style.maxHeight;
+              content.style.maxHeight = 'none';
+              const naturalHeight = content.scrollHeight;
+              content.style.maxHeight = currentMaxHeight;
+              
+              // Update to natural height
+              content.style.maxHeight = naturalHeight + 'px';
+            }
+          }
+          
+          header.addEventListener('click', function() {
+            const isExpanded = content.classList.contains('expanded');
+            
+            if (isExpanded) {
+              // Collapse
+              content.style.maxHeight = '0px';
+              content.style.paddingTop = '0px';
+              content.classList.remove('expanded');
+              icon.style.transform = 'rotate(0deg)';
+              card.classList.remove('benefits-expanded');
+            } else {
+              // Get natural height for expansion
+              content.style.maxHeight = 'none';
+              const naturalHeight = content.scrollHeight;
+              
+              // Reset and animate
+              content.style.maxHeight = '0px';
+              
+              // Use requestAnimationFrame for smooth animation
+              requestAnimationFrame(() => {
+                content.style.maxHeight = naturalHeight + 'px';
+                content.style.paddingTop = '12px';
+                content.classList.add('expanded');
+                icon.style.transform = 'rotate(180deg)';
+                card.classList.add('benefits-expanded');
+              });
+            }
+          });
+          
+          // Optional: Add resize observer to handle dynamic content changes
+          if (window.ResizeObserver) {
+            const resizeObserver = new ResizeObserver(() => {
+              updateContentHeight();
+            });
+            resizeObserver.observe(content);
+          }
+        }
+      });
+      
+      // Services Slider functionality
+      let currentSlide = 0;
+      const totalSlides = 3;
+      const slider = document.querySelector('.services-slider');
+      const indicators = document.querySelectorAll('.services-indicator');
+      const prevBtn = document.querySelector('.services-prev-btn');
+      const nextBtn = document.querySelector('.services-next-btn');
+      
+      function updateSlider() {
+        // Move slider
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          if (index === currentSlide) {
+            indicator.classList.remove('bg-slate-300');
+            indicator.classList.add('bg-teal-500');
+          } else {
+            indicator.classList.remove('bg-teal-500');
+            indicator.classList.add('bg-slate-300');
+          }
+        });
+        
+        // Update button states
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+      }
+      
+      // Previous button
+      prevBtn.addEventListener('click', () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSlider();
+        }
+      });
+      
+      // Next button
+      nextBtn.addEventListener('click', () => {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+          updateSlider();
+        }
+      });
+      
+      // Indicator buttons
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          currentSlide = index;
+          updateSlider();
+        });
+      });
+      
+      // Initialize slider
+      updateSlider();
+      
+      // Auto-slide (optional)
+      setInterval(() => {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+        } else {
+          currentSlide = 0;
+        }
+        updateSlider();
+      }, 5000); // Change slide every 5 seconds
+      
     </script>
   </section>
 
