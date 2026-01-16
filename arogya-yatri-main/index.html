@@ -1481,8 +1481,8 @@
         </p>
       </div>
 
-      <!-- Services Slider - 2x2 Layout -->
-      <div class="relative max-w-4xl mx-auto">
+      <!-- Services Slider - 2x2 Layout (Mobile Only) -->
+      <div class="relative max-w-4xl mx-auto md:hidden">
         <!-- Slider Container -->
         <div class="services-slider-container overflow-hidden rounded-2xl">
           <div class="services-slider flex transition-transform duration-500 ease-in-out">
@@ -1715,6 +1715,181 @@
           </button>
         </div>
         
+      </div>
+
+      <!-- Services Grid - Desktop (5x2 Layout) -->
+      <div class="hidden md:grid max-w-7xl mx-auto grid-cols-5 gap-6">
+        
+        <!-- Service 1: Medical Coordination -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-clinic text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Medical Coordination</h3>
+            <span class="text-xs bg-teal-100 text-teal-700 px-3 py-1 rounded-full">Core</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Medical Coordination</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              We manage your entire healthcare journey with top hospitals and expert doctors.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 2: Visa & Travel -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bxs-plane-alt text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Visa & Travel</h3>
+            <span class="text-xs bg-sky-100 text-sky-700 px-3 py-1 rounded-full">Essential</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Visa & Travel</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Hassle-free visa processing and travel arrangements for your medical trip.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3: Accommodation -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-home text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Accommodation</h3>
+            <span class="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">Comfort</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Accommodation</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Handpicked accommodations near hospitals for your comfort and convenience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 4: Language Support -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-world text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Language Support</h3>
+            <span class="text-xs bg-violet-100 text-violet-700 px-3 py-1 rounded-full">120+ Languages</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Language Support</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Multilingual team ensuring clear communication throughout your journey.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 5: Companion Planning -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-user-plus text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Companion Planning</h3>
+            <span class="text-xs bg-rose-100 text-rose-700 px-3 py-1 rounded-full">Free*</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Companion Planning</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Travel and stay arrangements for your loved ones to be with you.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 6: Tourism Planning -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-map text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Tourism Planning</h3>
+            <span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full">Cultural</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Tourism Planning</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Explore India's culture and beauty with customized tourism plans.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 7: Post-Recovery Care -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-support text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Post-Recovery Care</h3>
+            <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">Follow-up</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Post-Recovery Care</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Continuous care and follow-up consultations after your treatment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 8: Second Opinion -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-file-find text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Second Opinion</h3>
+            <span class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Free*</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Second Opinion</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Expert second opinions from renowned medical specialists.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 9: Medicine Courier -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-package text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Medicine Courier</h3>
+            <span class="text-xs bg-orange-100 text-orange-700 px-3 py-1 rounded-full">Global</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Medicine Courier</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Safe medicine delivery to your home for uninterrupted treatment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 10: Clinical Nutrition -->
+        <div class="service-card bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full relative overflow-hidden cursor-pointer">
+          <div class="flex flex-col items-center text-center flex-grow justify-center">
+            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-md mb-3">
+              <i class='bx bx-dish text-xl text-white'></i>
+            </div>
+            <h3 class="text-base font-semibold text-slate-900 mb-2 leading-tight">Clinical Nutrition</h3>
+            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">Expert</span>
+          </div>
+          <div class="service-overlay absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 flex flex-col justify-center text-white opacity-0 pointer-events-none transition-all duration-300 transform scale-95">
+            <h3 class="text-lg font-semibold mb-2 text-center">Clinical Nutrition</h3>
+            <p class="text-white/95 text-sm leading-relaxed text-center">
+              Personalized nutrition plans from certified clinical dieticians.
+            </p>
+          </div>
+        </div>
+
       </div>
 
       <!-- Call to Action -->

@@ -279,18 +279,50 @@ white-space: normal;
   <!-- ================= HERO SECTION ================= -->
 <section class="treatments-hero relative overflow-hidden">
   <div class="relative h-[70vh] min-h-[500px] flex items-center justify-center">
-    <!-- Background Image -->
-    <img 
-      src="../../src/images/instagram/insta_french_discovers.webp" 
-      alt="Medical Treatment"
-      class="absolute inset-0 w-full h-full object-cover"
-    />
+    <!-- Background Images Grid -->
+    <div class="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:grid-rows-2 gap-0 w-full h-full">
+      <!-- Image 1 -->
+      <div class="relative w-full h-full overflow-hidden">
+        <img 
+          src="../../src/images/instagram/insta_one.webp" 
+          alt="Medical Treatment"
+          class="absolute inset-0 w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+        />
+      </div>
+      
+      <!-- Image 2 -->
+      <div class="relative w-full h-full overflow-hidden">
+        <img 
+          src="../../src/images/instagram/insta_two.webp" 
+          alt="Medical Treatment"
+          class="absolute inset-0 w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+        />
+      </div>
+      
+      <!-- Image 3 -->
+      <div class="relative w-full h-full overflow-hidden">
+        <img 
+          src="../../src/images/instagram/insta_three.webp" 
+          alt="Medical Treatment"
+          class="absolute inset-0 w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+        />
+      </div>
+      
+      <!-- Image 4 -->
+      <div class="relative w-full h-full overflow-hidden">
+        <img 
+          src="../../src/images/instagram/insta_four.webp" 
+          alt="Medical Treatment"
+          class="absolute inset-0 w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+        />
+      </div>
+    </div>
     
     <!-- Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-teal-900/50"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-teal-900/50 z-10"></div>
     
     <!-- Content -->
-    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+    <div class="relative z-20 max-w-4xl mx-auto px-6 text-center text-white">
       <span class="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/20 backdrop-blur-sm border border-teal-400/30 rounded-full text-teal-300 text-sm font-medium mb-6">
         <i class='bx bx-plus-medical'></i>
         Medical Excellence
