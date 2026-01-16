@@ -104,6 +104,37 @@
       padding: 6px 0;
       white-space: normal;
     }
+
+    /* ===== TABLE RESPONSIVE STYLING ===== */
+    @media (max-width: 640px) {
+      #costComparisonTable {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      #costComparisonTable table {
+        font-size: 11px;
+      }
+      
+      #costComparisonTable th,
+      #costComparisonTable td {
+        padding: 8px 6px;
+        white-space: nowrap;
+      }
+    }
+
+    /* ===== SMOOTH SCROLL BEHAVIOR ===== */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ===== ENHANCED CARD SHADOWS ===== */
+    #costComparisonTable {
+      transition: box-shadow 0.3s ease;
+    }
+
+    #costComparisonTable:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
   </style>
 
 </head>
@@ -250,43 +281,43 @@
   <main class="page-wrapper max-w-7xl mx-auto">
 
     <!-- ================= HERO SECTION ================= -->
-    <section id="heroSection" class="relative py-20 bg-gradient-to-br from-slate-50 to-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+    <section id="heroSection" class="relative py-8 md:py-12 bg-gradient-to-br from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <!-- Image -->
-          <div class="relative h-96 rounded-2xl overflow-hidden shadow-xl">
+          <div class="relative h-64 sm:h-80 md:h-96 rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl">
             <img id="treatmentImage" src="../../src/images/cardiac.webp" alt="Treatment"
               class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
 
           <!-- Content -->
-          <div>
-            <div class="inline-flex items-center gap-2 text-sm font-medium text-teal-500 mb-4">
-              <i class='bx bx-plus-medical'></i>
+          <div class="space-y-4 md:space-y-6">
+            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-teal-500 mb-2">
+              <i class='bx bx-plus-medical text-base'></i>
               <span>Medical Treatment</span>
             </div>
-            <h1 id="treatmentTitle" class="text-4xl sm:text-5xl font-semibold text-slate-900 mb-6 leading-tight">
+            <h1 id="treatmentTitle" class="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">
               Treatment Details
             </h1>
             <div id="successRateBadge"
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 text-white text-sm font-semibold mb-6">
-              <i class='bx bx-check-circle'></i>
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 text-white text-xs sm:text-sm font-semibold shadow-md">
+              <i class='bx bx-check-circle text-base'></i>
               <span>Loading...</span>
             </div>
-            <p id="treatmentDescription" class="text-lg text-slate-600 leading-relaxed mb-8">
+            <p id="treatmentDescription" class="text-base sm:text-lg text-slate-600 leading-relaxed">
               Loading treatment information...
             </p>
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
               <a href="#"
-                class="openConsultantModal inline-flex items-center gap-3 px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-white font-medium transition">
-                <i class='bx bx-calendar text-xl'></i>
-                Book Consultation
+                class="openConsultantModal inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-white text-sm sm:text-base font-medium transition shadow-md hover:shadow-lg">
+                <i class='bx bx-calendar text-lg sm:text-xl'></i>
+                <span>Book Consultation</span>
               </a>
               <a href="treatments.html"
-                class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-slate-300 hover:bg-slate-50 text-slate-700 font-medium transition">
-                <i class='bx bx-dollar-circle text-xl'></i>
-                View Pricing
+                class="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-slate-700 text-sm sm:text-base font-medium transition">
+                <i class='bx bx-dollar-circle text-lg sm:text-xl'></i>
+                <span>View Pricing</span>
               </a>
             </div>
           </div>
@@ -295,19 +326,27 @@
     </section>
 
     <!-- ================= TREATMENT INFORMATION SECTION ================= -->
-    <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
+    <section class="py-8 md:py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="max-w-3xl">
-          <h2 class="text-3xl font-semibold text-slate-900 mb-6">About This Treatment</h2>
-          <div id="treatmentInfo" class="prose prose-slate max-w-none">
-            <p id="treatmentFullDescription" class="text-lg text-slate-700 leading-relaxed mb-6">
+          <div class="mb-6 md:mb-8">
+            <span class="inline-block text-xs sm:text-sm font-medium text-teal-500 uppercase tracking-wider mb-3">Overview</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 leading-tight">About This Treatment</h2>
+          </div>
+          <div id="treatmentInfo" class="prose prose-slate max-w-none prose-lg">
+            <p id="treatmentFullDescription" class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
               Loading...
             </p>
-            <div id="successRateInfo" class="bg-teal-50 border-l-4 border-teal-500 p-6 rounded-r-lg">
-              <h3 class="text-lg font-semibold text-slate-900 mb-2">Treatment Success Rate in India</h3>
-              <p id="successRateText" class="text-slate-700">
-                Loading...
-              </p>
+            <div id="successRateInfo" class="bg-gradient-to-r from-teal-50 to-emerald-50 border-l-4 border-teal-500 p-5 sm:p-6 rounded-r-lg shadow-sm">
+              <div class="flex items-start gap-3 mb-2">
+                <i class='bx bx-trophy text-2xl text-teal-500 mt-0.5'></i>
+                <div>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-900 mb-2">Treatment Success Rate in India</h3>
+                  <p id="successRateText" class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                    Loading...
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -315,39 +354,43 @@
     </section>
 
     <!-- ================= COST COMPARISON SECTION ================= -->
-    <section class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <span class="inline-flex items-center gap-2 text-sm font-medium text-blue-500 mb-3">
-            <i class='bx bx-dollar-circle'></i>
+    <section class="py-10 md:py-16 bg-gradient-to-b from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8 md:mb-12">
+          <span class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-blue-500 uppercase tracking-wider mb-3">
+            <i class='bx bx-dollar-circle text-base'></i>
             Cost Comparison
           </span>
-          <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 leading-tight mb-4">
             Compare Costs Across <span class="text-teal-500">Top Countries</span>
           </h2>
-          <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
+          <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
             See how India compares with other leading medical tourism destinations for this treatment specialty.
           </p>
         </div>
 
-        <div id="costComparisonTable" class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-          <div class="overflow-x-auto">
-            <table class="w-full border-collapse text-sm">
-              <thead id="tableHead" class="bg-slate-50">
-                <!-- Headers will be populated by JavaScript -->
-              </thead>
-              <tbody id="tableBody">
-                <!-- Rows will be populated by JavaScript -->
-              </tbody>
-            </table>
+        <div id="costComparisonTable" class="bg-white rounded-xl md:rounded-2xl border border-slate-200 overflow-hidden shadow-lg">
+          <div class="overflow-x-auto -mx-4 sm:mx-0">
+            <div class="inline-block min-w-full align-middle">
+              <div class="overflow-hidden">
+                <table class="min-w-full divide-y divide-slate-200">
+                  <thead id="tableHead" class="bg-gradient-to-r from-slate-50 to-slate-100">
+                    <!-- Headers will be populated by JavaScript -->
+                  </thead>
+                  <tbody id="tableBody" class="bg-white divide-y divide-slate-100">
+                    <!-- Rows will be populated by JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="mt-8 text-center">
+        <div class="mt-8 md:mt-10 text-center">
           <a href="treatments.html"
-            class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-white font-medium transition">
+            class="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-teal-500 hover:bg-teal-600 text-white text-sm sm:text-base font-medium transition shadow-md hover:shadow-lg">
             <span>View Full Cost Calculator</span>
-            <i class='bx bx-right-arrow-alt text-xl'></i>
+            <i class='bx bx-right-arrow-alt text-lg sm:text-xl'></i>
           </a>
         </div>
       </div>
@@ -819,31 +862,31 @@
       // Create header row
       const headerRow = document.createElement('tr');
       headerRow.innerHTML = `
-      <th class="px-5 py-4 font-medium border-b border-slate-200 text-left">Procedure</th>
-      <th class="px-5 py-4 font-medium border-b border-slate-200 text-center bg-teal-50">${treatment.countries[0]}</th>
-      <th class="px-5 py-4 font-medium border-b border-slate-200 text-center">${treatment.countries[1]}</th>
-      <th class="px-5 py-4 font-medium border-b border-slate-200 text-center">${treatment.countries[2]}</th>
-      <th class="px-5 py-4 font-medium border-b border-slate-200 text-center">${treatment.countries[3]}</th>
-      <th class="px-5 py-4 font-medium border-b border-slate-200 text-center">${treatment.countries[4]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-left sticky left-0 bg-slate-50 z-10">Procedure</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center bg-teal-100 border-l border-slate-200">${treatment.countries[0]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[1]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[2]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[3]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[4]}</th>
     `;
       tableHead.appendChild(headerRow);
 
       // Create data rows
       treatment.procedures.forEach((procedure, index) => {
         const row = document.createElement('tr');
-        row.className = index < treatment.procedures.length - 1 ? 'border-b border-slate-100' : '';
+        row.className = index < treatment.procedures.length - 1 ? 'hover:bg-slate-50 transition-colors' : 'hover:bg-slate-50 transition-colors';
 
         const formatCost = (cost) => {
           return cost !== null && cost !== undefined ? '$' + cost.toLocaleString() : 'N/A';
         };
 
         const cells = [
-          `<td class="px-5 py-4">${procedure.name}</td>`,
-          `<td class="px-5 py-4 text-center font-semibold text-teal-600">${formatCost(procedure.costs[0])}</td>`,
-          `<td class="px-5 py-4 text-center">${formatCost(procedure.costs[1])}</td>`,
-          `<td class="px-5 py-4 text-center">${formatCost(procedure.costs[2])}</td>`,
-          `<td class="px-5 py-4 text-center">${formatCost(procedure.costs[3])}</td>`,
-          `<td class="px-5 py-4 text-center">${formatCost(procedure.costs[4])}</td>`
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-medium text-slate-900 sticky left-0 bg-white z-10 border-r border-slate-100">${procedure.name}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center font-semibold text-teal-600 bg-teal-50/30 border-l border-slate-100">${formatCost(procedure.costs[0])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[1])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[2])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[3])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[4])}</td>`
         ];
 
         row.innerHTML = cells.join('');
