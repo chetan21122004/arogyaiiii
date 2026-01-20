@@ -1,0 +1,509 @@
+/* Hide scrollbar globally */
+html, body {
+scrollbar-width: none;      /* Firefox */
+-ms-overflow-style: none;   /* IE & Edge */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+display: none;              /* Chrome, Safari */
+}
+*::-webkit-scrollbar {
+display: none;
+}
+
+html { scroll-behavior: smooth; }
+
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+left: 50%;
+bottom: -4px;
+width: 0;
+height: 2px;
+background: white;
+transform: translateX(-50%);
+transition: width .3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+
+.hero-overlay {
+background: rgba(70, 207, 171, 0.55);
+}
+
+/* marquee */
+@keyframes marquee {
+0% { transform: translateX(-100%); }
+100% { transform: translateX(100%); }
+}
+
+.marquee-track {
+animation: marquee 30s linear infinite;
+}
+
+.marquee-mask {
+mask-image: linear-gradient(
+to right,
+transparent 0%,
+black 8%,
+black 92%,
+transparent 100%
+);
+-webkit-mask-image: linear-gradient(
+to right,
+transparent 0%,
+black 8%,
+black 92%,
+transparent 100%
+);
+}
+
+@media (max-width: 640px) {
+.marquee-track {
+animation-duration: 20s;
+}
+}
+
+@keyframes marquee-rtl {
+0% { transform: translateX(100%); }
+100% { transform: translateX(-100%); }
+}
+
+.brand-marquee {
+animation: marquee-rtl 28s linear infinite;
+}
+
+.brand-mask {
+mask-image: linear-gradient(
+to right,
+transparent 0%,
+black 8%,
+black 92%,
+transparent 100%
+);
+-webkit-mask-image: linear-gradient(
+to right,
+transparent 0%,
+black 8%,
+black 92%,
+transparent 100%
+);
+}
+
+@media (max-width: 640px) {
+.brand-marquee {
+animation-duration: s;
+}
+}
+
+
+
+@keyframes grow-line {
+from { height: 0; }
+to { height: 100%; }
+}
+
+.step-line {
+animation: grow-line 1.6s ease-out forwards;
+}
+
+/* Navbar scroll state */
+.nav-scrolled {
+background-color: white;
+box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+transition: all 0.5s;
+}
+
+/* Text color switch */
+.nav-scrolled .nav-text,
+.nav-scrolled .nav-link,
+.nav-scrolled .nav-cta,
+.nav-scrolled #menuBtn {
+color: black !important;
+}
+
+/* Underline color switch */
+.nav-scrolled .nav-link::after {
+background: black;
+}
+
+/* CTA border + hover fix */
+.nav-scrolled .nav-cta {
+border-color: black;
+}
+
+.nav-scrolled .nav-cta:hover {
+background: black;
+color: white !important;
+}
+
+/* Instagram Images Slider */
+.slider-track {
+  display: flex;
+  gap: 5px;
+  animation: slide 9s linear infinite;
+}
+
+/* Mobile: Faster animation to maintain same visual speed */
+@media (max-width: 768px) {
+  .slider-track {
+    animation-duration: 3s; /* Much faster on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-track {
+    animation-duration: 2.5s; /* Even faster on very small screens */
+  }
+}
+
+.slider-item {
+  flex: 0 0 280px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes slide {
+from {
+transform: translateX(0);
+}
+to {
+transform: translateX(-100%);
+}
+}
+
+/* Instagram Reels Slider */
+ .reel-card {
+    min-width: 240px;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .reel-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 52px rgba(15, 23, 42, 0.16);
+  }
+
+  .reel-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .reel-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 55%);
+  }
+
+  .reel-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .reel-play svg {
+    background: #ffffff;
+    color: #0f172a;
+    width: 52px;
+    height: 52px;
+    padding: 14px;
+    border-radius: 9999px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
+  }
+
+  .reel-card.playing .reel-play {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .reel-caption {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .reel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f172a;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  /* Mobile centered reel */
+  @media (max-width: 768px) {
+    .reels-track {
+      padding-left: calc(50vw - 120px);
+      padding-right: calc(50vw - 120px);
+      scroll-snap-type: x mandatory;
+    }
+
+    .reel-card {
+      scroll-snap-align: center;
+      min-width: 240px;
+      height: 380px;
+    }
+
+    .reel-arrow {
+      display: none;
+    }
+  }
+
+  /* Step Animation */
+  .step-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        flex-shrink: 0;
+      }
+
+      .step-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      .step-desc {
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #64748b;
+      }
+
+      .step-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.6s ease;
+      }
+
+      /* Enhanced hover effects for benefit cards */
+    .benefit-card {
+      position: relative;
+      min-height: 200px;
+    }
+
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 1.5rem;
+      padding: 2px;
+      background: linear-gradient(135deg, transparent, transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .benefit-card:hover::before {
+      opacity: 1;
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(59, 130, 246, 0.08));
+    }
+
+    /* Smooth reveal animation for additional info - FIXED ISOLATION */
+    .benefit-card .additional-info {
+      position: relative;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 10;
+      background: white;
+      pointer-events: none;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    /* Show additional info only when card is hovered */
+    .benefit-card:hover .additional-info {
+      opacity: 1;
+      max-height: 500px;
+      pointer-events: auto;
+    }
+
+    /* Enhanced border-top with theme-specific colors */
+    .benefit-card:hover .additional-info>div {
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Theme-specific border colors */
+    .benefit-card:hover.border-teal-300 .additional-info>div {
+      border-top-color: rgba(20, 184, 166, 0.25);
+    }
+
+    .benefit-card:hover.border-orange-300 .additional-info>div {
+      border-top-color: rgba(251, 146, 60, 0.25);
+    }
+
+    .benefit-card:hover.border-blue-300 .additional-info>div {
+      border-top-color: rgba(96, 165, 250, 0.25);
+    }
+
+    .benefit-card:hover.border-emerald-300 .additional-info>div {
+      border-top-color: rgba(110, 231, 183, 0.25);
+    }
+
+    .benefit-card:hover.border-violet-300 .additional-info>div {
+      border-top-color: rgba(196, 181, 253, 0.25);
+    }
+
+    .benefit-card:hover.border-rose-300 .additional-info>div {
+      border-top-color: rgba(253, 164, 175, 0.25);
+    }
+
+    .benefit-card:hover.border-amber-300 .additional-info>div {
+      border-top-color: rgba(252, 211, 77, 0.25);
+    }
+
+    /* Stagger animation for bullet points */
+    .benefit-card:hover .additional-info .space-y-3>* {
+      animation: fadeInUp 0.4s ease-out forwards;
+    }
+
+    .benefit-card:hover .additional-info .space-y-3>*:nth-child(1) {
+      animation-delay: 0.1s;
+      opacity: 0;
+    }
+
+    .benefit-card:hover .additional-info .space-y-3>*:nth-child(2) {
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .benefit-card:hover .additional-info .space-y-3>*:nth-child(3) {
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+
+    .benefit-card:hover .additional-info .space-y-3>*:nth-child(4) {
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile: Click to expand */
+    @media (max-width: 640px) {
+      .benefit-card {
+        cursor: pointer;
+      }
+    }
+
+    /* instagram embed reels */
+    .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.reel-embed-card {
+  flex: 0 0 320px;
+  max-width: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Force embed to fit card */
+.reel-embed-card .instagram-media {
+  margin: 0 !important;
+  min-width: 100% !important;
+  width: 100% !important;
+}
+
+.step-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-top: 6px;
+}

@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arogya Yatri - Treatment Details</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lexend:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- CSS styles -->
+  <link rel="stylesheet" href="../style/basic-nav.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            logo: ['Anton', 'sans-serif'],
+            body: ['Lexend', 'sans-serif']
+          },
+          colors: {
+            primaryDark: '#0F172A'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Hide scrollbar globally */
+    html,
+    body {
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE & Edge */
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari */
+    }
+
+    *::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ===== NAVBAR ===== */
+    #siteHeader {
+      height: 72px;
+      background: white;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-link {
+      position: relative;
+      color: black;
+      padding: 4px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: black;
+      transform: translateX(-50%);
+      transition: width .25s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      border-color: black;
+    }
+
+    /* ===== PAGE OFFSET FOR FIXED NAV ===== */
+    .page-wrapper {
+      padding-top: 96px;
+    }
+
+    /* ===== Mobile Sidebar Fix ===== */
+    #mobileMenu nav a {
+      display: block;
+      width: 100%;
+      line-height: 1.4;
+      padding: 6px 0;
+      white-space: normal;
+    }
+
+    /* ===== TABLE RESPONSIVE STYLING ===== */
+    @media (max-width: 640px) {
+      #costComparisonTable {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      
+      #costComparisonTable table {
+        font-size: 11px;
+      }
+      
+      #costComparisonTable th,
+      #costComparisonTable td {
+        padding: 8px 6px;
+        white-space: nowrap;
+      }
+    }
+
+    /* ===== SMOOTH SCROLL BEHAVIOR ===== */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ===== ENHANCED CARD SHADOWS ===== */
+    #costComparisonTable {
+      transition: box-shadow 0.3s ease;
+    }
+
+    #costComparisonTable:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+
+<body class="font-body bg-white text-black">
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="siteHeader" class="fixed top-0 inset-x-0 z-50">
+    <nav class="relative max-w-7xl mx-auto px-6 h-20 flex items-center">
+
+      <!-- Logo -->
+      <a href="../../index.html" class="flex items-center">
+        <div class="leading-tight">
+          <div class="text-2xl tracking-tight">Arogya Yatri</div>
+          <div class="text-xs opacity-70">A service by Ewan Business Solutions</div>
+        </div>
+      </a>
+
+      <!-- Center Links -->
+      <ul class="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-10 text-base font-medium items-center">
+
+        <li>
+          <a href="treatments.html" class="nav-link inline-flex items-center leading-none">
+            Treatment
+          </a>
+        </li>
+
+
+
+        <li>
+          <a href="doctor.html" class="nav-link inline-flex items-center leading-none">
+            Doctor
+          </a>
+        </li>
+
+        <li>
+          <a href="destinations.html" class="nav-link inline-flex items-center leading-none">
+            Destinations
+          </a>
+        </li>
+
+        <!-- Explore Dropdown -->
+        <li class="relative group flex items-center">
+          <button class="nav-link inline-flex items-center gap-1 leading-none">
+            Explore
+            <i class='bx bx-chevron-down text-sm relative top-[1px]'></i>
+          </button>
+
+          <div
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 rounded-xl bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="about.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-t-xl">About
+              Us</a>
+            <a href="testimonial.html" class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50">Testimonials</a>
+            <a href="news.html"
+              class="block px-5 py-3 text-sm text-slate-800 hover:bg-slate-50 rounded-b-xl">News/Blogs</a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- CTA -->
+      <div class="ml-auto hidden md:flex items-center">
+        <a
+          class="openConsultantModal nav-cta inline-flex items-center gap-3 px-5 py-2 rounded-full border transition leading-none">
+          <span class="h-8 w-8 rounded-full bg-teal-500 text-white flex items-center justify-center circleicon">
+            <i class='bx bx-right-arrow-alt'></i>
+          </span>
+          <span class="text-sm font-medium">Book Consultation</span>
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button id="menuBtn" class="ml-auto md:hidden text-2xl flex items-center">
+        <i class='bx bx-menu'></i>
+      </button>
+
+    </nav>
+  </header>
+
+  <!-- ================= MOBILE SIDEBAR ================= -->
+  <div id="mobileMenu"
+    class="fixed inset-y-0 left-0 w-80 bg-white z-50 transform -translate-x-full transition-transform duration-300 md:hidden shadow-2xl">
+
+    <!-- Header -->
+    <div class="p-6 border-b border-gray-200 flex justify-between items-start">
+      <a href="../../index.html">
+        <div>
+          <div class="font-body text-2xl text-primaryDark">Arogya Yatri</div>
+          <div class="text-sm text-gray-500">A service by Ewan Business Solutions</div>
+        </div>
+      </a>
+      <button id="closeBtn" class="text-2xl text-black">
+        <i class='bx bx-x'></i>
+      </button>
+    </div>
+
+    <!-- Nav -->
+    <nav class="px-6 py-8 space-y-6 text-lg font-medium text-primaryDark">
+      <a href="treatments.html" class="block">Treatment</a>
+
+      <a href="doctor.html" class="block">Doctor</a>
+      <a href="destinations.html" class="block">Destinations</a>
+
+      <!-- Mobile Explore Dropdown -->
+      <div>
+        <button id="mobileExploreBtn" class="w-full flex items-center justify-between">
+          <span>Explore</span>
+          <i id="mobileExploreIcon" class='bx bx-chevron-down text-xl'></i>
+        </button>
+
+        <div id="mobileExploreMenu" class="mt-4 ml-4 space-y-4 hidden text-base">
+          <a href="about.html" class="block">About Us</a>
+          <a href="testimonial.html" class="block">Testimonials</a>
+          <a href="news.html" class="block">News/Blogs</a>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-gray-200"></div>
+
+      <a class="openConsultantModal flex items-center justify-between px-5 py-2 rounded-full border border-primaryDark hover:bg-primaryDark hover:text-white transition"
+        style="display: inline-flex; padding: 10px 20px; border-radius: 9999px; border: 1px solid black;">
+        <span>Book Consultation</span>
+        <span class="h-10 w-10 flex items-center justify-center rounded-full bg-teal-500 text-white">
+          <i class='bx bx-right-arrow-alt text-xl'></i>
+        </span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- ================= MOBILE DROPDOWN SCRIPT ================= -->
+  <script>
+    const mobileExploreBtn = document.getElementById('mobileExploreBtn')
+    const mobileExploreMenu = document.getElementById('mobileExploreMenu')
+    const mobileExploreIcon = document.getElementById('mobileExploreIcon')
+
+    mobileExploreBtn.addEventListener('click', () => {
+      mobileExploreMenu.classList.toggle('hidden')
+      mobileExploreIcon.classList.toggle('bx-chevron-down')
+      mobileExploreIcon.classList.toggle('bx-chevron-up')
+    })
+  </script>
+
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="page-wrapper max-w-7xl mx-auto">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="heroSection" class="relative py-8 md:py-12 bg-gradient-to-br from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <!-- Image -->
+          <div class="relative h-64 sm:h-80 md:h-96 rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl">
+            <img id="treatmentImage" src="../../src/images/cardiac.webp" alt="Treatment"
+              class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="space-y-4 md:space-y-6">
+            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-teal-500 mb-2">
+              <i class='bx bx-plus-medical text-base'></i>
+              <span>Medical Treatment</span>
+            </div>
+            <h1 id="treatmentTitle" class="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">
+              Treatment Details
+            </h1>
+            <div id="successRateBadge"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500 text-white text-xs sm:text-sm font-semibold shadow-md">
+              <i class='bx bx-check-circle text-base'></i>
+              <span>Loading...</span>
+            </div>
+            <p id="treatmentDescription" class="text-base sm:text-lg text-slate-600 leading-relaxed">
+              Loading treatment information...
+            </p>
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
+              <a href="#"
+                class="openConsultantModal inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-white text-sm sm:text-base font-medium transition shadow-md hover:shadow-lg">
+                <i class='bx bx-calendar text-lg sm:text-xl'></i>
+                <span>Book Consultation</span>
+              </a>
+              <a href="treatments.html#cost-calculator"
+                class="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-slate-700 text-sm sm:text-base font-medium transition">
+                <i class='bx bx-dollar-circle text-lg sm:text-xl'></i>
+                <span>View Pricing</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TREATMENT INFORMATION SECTION ================= -->
+    <section class="py-8 md:py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-3xl">
+          <div class="mb-6 md:mb-8">
+            <span class="inline-block text-xs sm:text-sm font-medium text-teal-500 uppercase tracking-wider mb-3">Overview</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 leading-tight">About This Treatment</h2>
+          </div>
+          <div id="treatmentInfo" class="prose prose-slate max-w-none prose-lg">
+            <p id="treatmentFullDescription" class="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
+              Loading...
+            </p>
+            <div id="successRateInfo" class="bg-gradient-to-r from-teal-50 to-emerald-50 border-l-4 border-teal-500 p-5 sm:p-6 rounded-r-lg shadow-sm">
+              <div class="flex items-start gap-3 mb-2">
+                <i class='bx bx-trophy text-2xl text-teal-500 mt-0.5'></i>
+                <div>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-900 mb-2">Treatment Success Rate in India</h3>
+                  <p id="successRateText" class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                    Loading...
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COST COMPARISON SECTION ================= -->
+    <section class="py-10 md:py-16 bg-gradient-to-b from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8 md:mb-12">
+          <span class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-blue-500 uppercase tracking-wider mb-3">
+            <i class='bx bx-dollar-circle text-base'></i>
+            Cost Comparison
+          </span>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 leading-tight mb-4">
+            Compare Costs Across <span class="text-teal-500">Top Countries</span>
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+            See how India compares with other leading medical tourism destinations for this treatment specialty.
+          </p>
+        </div>
+
+        <div id="costComparisonTable" class="bg-white rounded-xl md:rounded-2xl border border-slate-200 overflow-hidden shadow-lg">
+          <div class="overflow-x-auto -mx-4 sm:mx-0">
+            <div class="inline-block min-w-full align-middle">
+              <div class="overflow-hidden">
+                <table class="min-w-full divide-y divide-slate-200">
+                  <thead id="tableHead" class="bg-gradient-to-r from-slate-50 to-slate-100">
+                    <!-- Headers will be populated by JavaScript -->
+                  </thead>
+                  <tbody id="tableBody" class="bg-white divide-y divide-slate-100">
+                    <!-- Rows will be populated by JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 md:mt-10 text-center">
+          <a href="treatments.html"
+            class="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-teal-500 hover:bg-teal-600 text-white text-sm sm:text-base font-medium transition shadow-md hover:shadow-lg">
+            <span>View Full Cost Calculator</span>
+            <i class='bx bx-right-arrow-alt text-lg sm:text-xl'></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONSULTANT MODAL -->
+  <div id="consultantModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+
+    <div class="relative w-full max-w-md rounded-[28px] bg-white shadow-2xl overflow-hidden">
+
+      <!-- CLOSE BUTTON -->
+      <button onclick="closeConsultantModal()"
+        class="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-slate-100 transition">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- BODY -->
+      <div class="px-4 py-4">
+        <div class="w-full h-[520px] rounded-2xl overflow-hidden border border-slate-200">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeOv7WZLFWBiCBvqrF9mIMLRLxN8jjjyeE-08HHJx_eOEJ7lw/viewform"
+            class="w-full h-full" frameborder="0" marginheight="0" marginwidth="0">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Whatsapp Icon -->
+  <a href="https://wa.me/918530054299" target="_blank" aria-label="Chat on WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 shadow-xl hover:scale-105 hover:bg-green-600 transition-transform duration-300">
+    <i class='bx bxl-whatsapp text-white text-3xl'></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="relative bg-slate-900 text-slate-300 pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- TOP GRID -->
+      <div class="grid gap-14 md:grid-cols-2 lg:grid-cols-5 mb-16">
+
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="../../index.html">
+            <h3 class="font-brand text-2xl text-white mb-3">Arogya Yatri</h3>
+            <p class="text-sm text-slate-400 max-w-md leading-relaxed mb-6">
+              Arogya Yatri is a global medical tourism platform connecting patients
+              with world-class hospitals, trusted doctors, and seamless healthcare
+              journeys across borders.
+            </p>
+          </a>
+
+          <!-- Social -->
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-500 transition">
+              <i class="bx bxl-facebook text-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/arogya.yatri/"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-500 transition">
+              <i class="bx bxl-instagram text-lg"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-500 transition">
+              <i class="bx bxl-youtube text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-5">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="../../index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="treatments.html" class="hover:text-white transition">Treatment</a></li>
+            <li><a href="doctor.html" class="hover:text-white transition">Doctor</a></li>
+            <li><a href="destinations.html" class="hover:text-white transition">Destinations</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="testimonial.html" class="hover:text-white transition">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-white font-semibold mb-5">Services</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="doctor.html" class="hover:text-white transition">Doctor Consultation</a></li>
+            <li><a href="treatments.html" class="hover:text-white transition">Treatment Packages</a></li>
+            <li><a href="doctor.html" class="hover:text-white transition">Post-Treatment Care</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACT (NEW) -->
+        <div>
+          <h4 class="text-white font-semibold mb-5">Contact</h4>
+
+          <ul class="space-y-4 text-sm">
+
+            <!-- Phone -->
+            <li class="flex items-start gap-3">
+              <i class="bx bx-phone text-teal-400 text-lg mt-0.5"></i>
+              <a href="tel:8530054299" class="hover:text-white transition">
+                +91 85300 54299
+              </a>
+            </li>
+
+            <!-- Email -->
+            <li class="flex items-start gap-3">
+              <i class="bx bx-envelope text-teal-400 text-lg mt-0.5"></i>
+              <a href="mailto:apoorva@ewan.co.in" class="hover:text-white transition break-all">
+                apoorva@ewan.co.in
+              </a>
+            </li>
+
+            <!-- Alternate Email -->
+            <li class="flex items-start gap-3">
+              <i class="bx bx-envelope-open text-teal-400 text-lg mt-0.5"></i>
+              <a href="mailto:pushkaraj.thakurdas@ewan.co.in" class="hover:text-white transition break-all">
+                pushkaraj.thakurdas@ewan.co.in
+              </a>
+            </li>
+
+            <!-- WhatsApp CTA -->
+            <li class="pt-2">
+              <a href="https://wa.me/918530054299" target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white transition">
+                <i class="bx bxl-whatsapp text-lg"></i>
+                WhatsApp Us
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="border-t border-white/10 mb-8"></div>
+
+      <!-- BOTTOM BAR -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>
+          © 2025 Arogya Yatri. A service by Ewan Business Solutions. All rights reserved.
+        </p>
+
+        <div class="flex items-center gap-6">
+          <span class="flex items-center gap-2">
+            <i class="bx bx-shield-quarter text-teal-400"></i>
+            Secure & Confidential
+          </span>
+          <span class="flex items-center gap-2">
+            <i class="bx bx-world text-teal-400"></i>
+            Global Healthcare Network
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openButtons = document.querySelectorAll('.openConsultantModal');
+      const modal = document.getElementById('consultantModal');
+      const closeBtn = document.getElementById('closeConsultantModal');
+      const form = document.getElementById('consultantForm');
+
+      openButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        });
+      }
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      });
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = form.querySelector('input[name="name"]').value;
+          const country = form.querySelector('select[name="country"]').value;
+          const whatsapp = form.querySelector('input[name="whatsapp"]').value;
+          const treatment = form.querySelector('textarea[name="treatment"]').value;
+          const contactMethod = form.querySelector('select[name="contactMethod"]').value;
+          const contactTime = form.querySelector('select[name="contactTime"]').value;
+
+          const message =
+            `Consultation Request\n\n` +
+            `Name: ${name}\n` +
+            `Country: ${country}\n` +
+            `WhatsApp Number: ${whatsapp}\n` +
+            `Treatment/Concern: ${treatment}\n` +
+            `Preferred Way to Contact: ${contactMethod}\n` +
+            `Preferred Time to Contact: ${contactTime}`;
+
+          const whatsappURL =
+            `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+
+          window.open(whatsappURL, '_blank');
+        });
+      }
+    });
+  </script>
+  <script>
+    function closeConsultantModal() {
+      document.getElementById("consultantModal").classList.add("hidden")
+    }
+  </script>
+
+  <!-- MENU TOGGLE SCRIPT -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.onclick = () => mobileMenu.classList.remove('-translate-x-full');
+    closeBtn.onclick = () => mobileMenu.classList.add('-translate-x-full');
+  </script>
+
+  <!-- TREATMENT DATA AND RENDERING SCRIPT -->
+  <script>
+    // Treatment data from context.md
+    const treatmentData = {
+      cardiology: {
+        name: "Cardiology & Cardiac Surgery",
+        image: "../../src/images/cardiac.webp",
+        description: "Advanced cardiac care with minimally invasive procedures and world-class surgical expertise.",
+        fullDescription: "Cardiology involves the diagnosis and treatment of heart-related conditions such as coronary artery disease, arrhythmias, and heart failure. Cardiac surgery includes procedures like bypass surgery, valve repair, and heart transplants to restore heart function. India offers advanced cardiac care with cutting-edge technology and specialist surgeons, ensuring world-class treatment at affordable costs.",
+        successRate: "Over 90% success in cardiac surgeries, with a growing number of international patients trusting Indian hospitals for heart care.",
+        successRateShort: "90%+ Success",
+        countries: ["India", "Germany", "Singapore", "Spain", "UAE"],
+        procedures: [
+          { name: "Angioplasty (PTCA)", costs: [4000, 6000, 25000, 15000, 8000] },
+          { name: "Bypass Surgery (CABG)", costs: [6500, 20000, 30000, 27000, 25000] },
+          { name: "Heart Valve Replacement", costs: [8000, 45000, 35000, 40000, 35000] },
+          { name: "Pacemaker Implantation", costs: [4000, 12000, 14000, 10000, 12000] },
+          { name: "Cardiac Consultation/Check-up", costs: [200, 300, 500, 400, 1500] }
+        ]
+      },
+      orthopedics: {
+        name: "Orthopedics & Joint Replacement",
+        image: "../../src/images/ortho.webp",
+        description: "Comprehensive joint care with robotic surgery and rapid recovery protocols.",
+        fullDescription: "Orthopedics focuses on the musculoskeletal system, addressing injuries and diseases related to bones, joints, ligaments, and muscles. Joint replacement surgeries, such as hip and knee replacements, help restore mobility and reduce pain caused by arthritis or injury. India's orthopedic surgeons use state-of-the-art implants and minimally invasive techniques for faster recovery.",
+        successRate: "Approximately 85-95% success rate in joint replacement surgeries, with excellent postoperative care.",
+        successRateShort: "85-95% Success",
+        countries: ["India", "Germany", "USA", "Australia", "Switzerland"],
+        procedures: [
+          { name: "Total Knee Replacement", costs: [6000, 18000, 35000, 25000, 30000] },
+          { name: "Hip Replacement", costs: [7000, 20000, 30000, 28000, 25000] },
+          { name: "Shoulder/Elbow Replacement", costs: [5500, 15000, 25000, 22000, 28000] },
+          { name: "Arthroscopy", costs: [3000, 8000, 12000, 10000, 12000] },
+          { name: "Spinal Surgery", costs: [6500, 22000, 50000, 35000, 40000] }
+        ]
+      },
+      neurology: {
+        name: "Neurology & Neurosurgery",
+        image: "../../src/images/neuro.webp",
+        description: "Cutting-edge neurological treatments with precision surgery and advanced imaging.",
+        fullDescription: "Neurology deals with disorders of the nervous system, including the brain, spinal cord, and nerves, diagnosing conditions like epilepsy, Parkinson's disease, and stroke. Neurosurgery involves surgical interventions to treat brain tumors, spinal cord injuries, and other neurological disorders. India provides advanced diagnostic tools and innovative neurosurgical procedures for effective treatment.",
+        successRate: "Around 80-90%, depending on the complexity of the neurological condition treated.",
+        successRateShort: "80-90% Success",
+        countries: ["India", "Germany", "USA", "UK", "Singapore"],
+        procedures: [
+          { name: "Brain Tumor Surgery", costs: [7500, 25000, 100000, 40000, 30000] },
+          { name: "Spine Surgery (Cervical/Lumbar)", costs: [5500, 20000, 60000, 25000, 22000] },
+          { name: "Deep Brain Stimulation", costs: [20000, 40000, 70000, 60000, 55000] },
+          { name: "Epilepsy Surgery", costs: [8000, 22000, 80000, 35000, 28000] },
+          { name: "Stroke Rehabilitation", costs: [3000, 15000, 50000, 20000, 18000] }
+        ]
+      },
+      oncology: {
+        name: "Oncology (Cancer Treatment)",
+        image: "../../src/images/oncology.webp",
+        description: "Comprehensive cancer care with personalized treatment plans and latest therapies.",
+        fullDescription: "Oncology is the branch of medicine dedicated to diagnosing and treating cancer through methods such as chemotherapy, radiation therapy, and surgery. India's top cancer centers offer personalized and multidisciplinary approaches for all cancer types, using latest technology for early detection and effective treatment.",
+        successRate: "Varies by cancer type, with up to 70-80% survival rates in common cancers due to early detection and advanced treatment.",
+        successRateShort: "70-80% Survival",
+        countries: ["India", "Germany", "USA", "UK", "Singapore"],
+        procedures: [
+          { name: "Chemotherapy (per cycle)", costs: [500, 3000, 10000, 5000, 4000] },
+          { name: "Radiation Therapy (course)", costs: [4000, 20000, 50000, 30000, 25000] },
+          { name: "Surgical Oncology", costs: [5000, 25000, 40000, 35000, 30000] },
+          { name: "Bone Marrow Transplant", costs: [30000, 200000, 400000, 250000, 150000] },
+          { name: "Cancer Second Opinion", costs: [200, 1000, 5000, 2000, 1500] }
+        ]
+      },
+      gastroenterology: {
+        name: "Gastroenterology & Hepatology",
+        image: "../../src/images/gynestrology.webp",
+        description: "Advanced digestive care including liver transplants and minimally invasive procedures.",
+        fullDescription: "Gastroenterology focuses on diseases of the digestive system including the stomach, intestines, liver, and pancreas. Hepatology specializes in liver-related diseases like hepatitis and cirrhosis. India's gastroenterologists use endoscopy, colonoscopy, and advanced imaging to diagnose and treat complex digestive disorders.",
+        successRate: "Over 85% success with minimally invasive procedures and early intervention in digestive diseases.",
+        successRateShort: "85%+ Success",
+        countries: ["India", "Germany", "Singapore", "Japan", "US"],
+        procedures: [
+          { name: "Liver Transplant", costs: [28000, 250000, 50000, 60000, 300000] },
+          { name: "Gallbladder / Biliary Surgery", costs: [3000, 10000, 8000, 12000, 20000] },
+          { name: "Bariatric (Weight Loss) Surgery", costs: [4500, 15000, 12000, 14000, 25000] },
+          { name: "Endoscopy / Colonoscopy", costs: [200, 1000, 800, 900, 3000] },
+          { name: "GI Cancer Treatment", costs: [7000, 50000, 28500, 40000, 60000] }
+        ]
+      },
+      urology: {
+        name: "Urology & Nephrology",
+        image: "../../src/images/urology.webp",
+        description: "Expert urological care with robotic surgery and comprehensive kidney treatments.",
+        fullDescription: "Urology involves treating urinary tract and male reproductive system disorders, including kidney stones and prostate conditions. Nephrology specializes in kidney health and managing chronic kidney diseases and dialysis. Indian specialists provide cutting-edge treatments, including robotic surgeries and kidney transplants.",
+        successRate: "Success rate exceeds 90% in kidney transplantations and advanced urological surgeries.",
+        successRateShort: "90%+ Success",
+        countries: ["India", "Germany", "Singapore", "Spain", "UAE"],
+        procedures: [
+          { name: "Kidney Transplant", costs: [13000, 100000, 50000, 40000, 45000] },
+          { name: "Prostate Surgery (TURP/Laser)", costs: [2000, 9000, 8000, 9000, 6000] },
+          { name: "Kidney Stone Removal", costs: [500, 6000, 5000, 9000, 4000] },
+          { name: "Dialysis (per session)", costs: [50, 300, 400, 250, 350] },
+          { name: "Urethral Reconstruction", costs: [4000, 15000, 12000, 12000, 10000] }
+        ]
+      },
+      gynecology: {
+        name: "Gynecology & Fertility",
+        image: "../../src/images/gynelogy.webp",
+        description: "Comprehensive women's health with advanced fertility treatments and surgical care.",
+        fullDescription: "Gynecology addresses women's reproductive health issues including menstrual disorders, fibroids, and cancers. Fertility treatments involve assisted reproductive technologies such as IVF to help individuals and couples conceive. India is a global hub for affordable and high-quality fertility treatments with excellent success rates.",
+        successRate: "IVF and fertility treatments show 40-50% success rates depending on patient factors, supported by experienced specialists.",
+        successRateShort: "40-50% IVF Success",
+        countries: ["India", "Spain", "Czech Republic", "Germany", "USA"],
+        procedures: [
+          { name: "IVF / ICSI / Fertility Treatments", costs: [3500, 6500, 3500, 5500, 15000] },
+          { name: "Hysterectomy", costs: [4000, 10000, 6000, 12000, 20000] },
+          { name: "Laparoscopic Gynec Surgery", costs: [3000, 8000, 5000, 10000, 18000] },
+          { name: "Surrogacy Assistance", costs: [35000, 60000, 50000, null, 120000] },
+          { name: "Maternity / Delivery Packages", costs: [2500, 7000, 4500, 8000, 15000] }
+        ]
+      },
+      cosmetic: {
+        name: "Cosmetic & Plastic Surgery",
+        image: "../../src/images/cosmetic.webp",
+        description: "Aesthetic enhancement with natural results using advanced surgical techniques.",
+        fullDescription: "Cosmetic and plastic surgery improve and restore appearance and function through procedures like rhinoplasty, liposuction, and reconstructive surgery. India's cosmetic surgeons combine artistic expertise with advanced surgical techniques to deliver natural-looking results at competitive prices.",
+        successRate: "Around 85-90% satisfaction rate reported by patients with cosmetic procedures.",
+        successRateShort: "85-90% Satisfaction",
+        countries: ["India", "South Korea", "Germany", "USA", "Brazil"],
+        procedures: [
+          { name: "Hair Transplant", costs: [3000, 4000, 6000, 12000, 5000] },
+          { name: "Rhinoplasty (Nose Job)", costs: [2000, 5000, 7000, 8000, 4000] },
+          { name: "Liposuction", costs: [2500, 4500, 6000, 7000, 4500] },
+          { name: "Tummy Tuck/Abdominoplasty", costs: [3500, 7000, 9000, 12000, 5500] },
+          { name: "Breast Aug/Reduction", costs: [3000, 6000, 8000, 10000, 4500] }
+        ]
+      },
+      ophthalmology: {
+        name: "Ophthalmology (Eye Care)",
+        image: "../../src/images/orthalpathy.webp",
+        description: "Advanced eye care with laser surgery and comprehensive vision correction.",
+        fullDescription: "Ophthalmology specializes in eye health, offering treatments for cataracts, glaucoma, retinal disorders, and laser vision correction. India provides world-renowned eye care with innovative surgeries and comprehensive eye wellness programs.",
+        successRate: "Cataract surgeries boast over 95% success with restored vision for most patients.",
+        successRateShort: "95%+ Success",
+        countries: ["India", "Germany", "Singapore", "Spain", "UAE"],
+        procedures: [
+          { name: "Cataract Surgery", costs: [1000, 2000, 3500, 2500, 3000] },
+          { name: "LASIK / Refractive Surgery (both eyes)", costs: [800, 2500, 3000, 2000, 2500] },
+          { name: "Retinal Surgery", costs: [2000, 6000, 5000, 5000, 4500] },
+          { name: "Glaucoma Treatment", costs: [1500, 6500, 4000, 6000, 4000] }
+        ]
+      },
+      ent: {
+        name: "ENT (Ear, Nose & Throat)",
+        image: "../../src/images/ent.webp",
+        description: "Specialized ENT care with microsurgery and hearing restoration procedures.",
+        fullDescription: "ENT specialists diagnose and treat diseases affecting the ear, nose, throat, and related structures like sinusitis, hearing loss, and vocal cord disorders. India offers advanced ENT surgeries, including cochlear implants and minimally invasive procedures.",
+        successRate: "Generally, above 90%, with high patient satisfaction in hearing restoration and sinus treatments.",
+        successRateShort: "90%+ Success",
+        countries: ["India", "Germany", "South Korea", "Spain", "USA"],
+        procedures: [
+          { name: "Cochlear Implant", costs: [15000, 30000, 25000, 28000, 50000] },
+          { name: "Sinus Surgery", costs: [3000, 8000, 6000, 7000, 12000] },
+          { name: "Tonsil/Adenoid Removal", costs: [1500, 4000, 3000, 3500, 6000] },
+          { name: "Ear Reconstruction", costs: [4000, 10000, 7000, 8000, 15000] }
+        ]
+      },
+      dental: {
+        name: "Dental & Oral Surgery",
+        image: "../../src/images/dental.webp",
+        description: "Complete dental care with digital dentistry and aesthetic smile design.",
+        fullDescription: "Dental care in India covers preventive, restorative, and surgical treatments such as root canals, implants, crowns, and orthodontics. Indian dental clinics use cutting-edge technology and maintain strict hygiene standards for safe, effective oral health care.",
+        successRate: "Dental implant success rates average 95% with minimally invasive and pain-free procedures.",
+        successRateShort: "95% Implant Success",
+        countries: ["India", "USA", "Germany", "Singapore", "Spain"],
+        procedures: [
+          { name: "Dental Implants (per tooth)", costs: [600, 4000, 1200, 2500, 1100] },
+          { name: "Full Mouth Rehabilitation", costs: [9000, 50000, 20000, 25000, 18000] },
+          { name: "Smile Design (full)", costs: [3500, 20000, 8000, 12000, 9000] },
+          { name: "Root Canal Treatment", costs: [100, 1200, 400, 600, 350] },
+          { name: "Orthodontics (Braces/Aligners)", costs: [1500, 6000, 3500, 4500, 3000] }
+        ]
+      },
+      ayurveda: {
+        name: "Ayurveda, Wellness & Rejuvenation",
+        image: "../../src/images/auruyveda.webp",
+        description: "Traditional healing with modern facilities for holistic wellness and rejuvenation.",
+        fullDescription: "Ayurveda is India's ancient holistic healing system integrating herbal treatments, yoga, and detox therapies to restore balance and health. Wellness retreats and rejuvenation therapies help manage lifestyle-related conditions and enhance mental well-being. India's authentic Ayurvedic centers attract global patients seeking natural healing.",
+        successRate: "Effective for chronic and lifestyle conditions with reported improvement rates over 80%, widely trusted worldwide.",
+        successRateShort: "80%+ Improvement",
+        countries: ["India", "Sri Lanka", "Germany", "USA", "Indonesia (Bali)"],
+        procedures: [
+          { name: "Ayurvedic Detox (Panchakarma)", costs: [1500, 2000, 4000, 5000, 2500] },
+          { name: "Stress Relief / Mental Wellness", costs: [1200, 1600, 3500, 4000, 2000] },
+          { name: "Weight Management", costs: [1400, 1800, 3800, 4500, 2200] },
+          { name: "Yoga & Naturopathy Packages", costs: [1000, 1400, 3000, 3500, 1800] }
+        ]
+      }
+    };
+
+    // Parse URL parameter
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const treatmentParam = urlParams.get('treatment') || 'cardiology';
+
+      const treatment = treatmentData[treatmentParam];
+
+      if (!treatment) {
+        // Redirect to treatments page if invalid treatment
+        window.location.href = 'treatments.html';
+        return;
+      }
+
+      // Update page title
+      document.title = `Arogya Yatri - ${treatment.name}`;
+
+      // Update hero section
+      document.getElementById('treatmentTitle').textContent = treatment.name;
+      document.getElementById('treatmentImage').src = treatment.image;
+      document.getElementById('treatmentImage').alt = treatment.name;
+      document.getElementById('treatmentDescription').textContent = treatment.description;
+      document.getElementById('successRateBadge').innerHTML = `<i class='bx bx-check-circle'></i><span>${treatment.successRateShort}</span>`;
+
+      // Update treatment information
+      document.getElementById('treatmentFullDescription').textContent = treatment.fullDescription;
+      document.getElementById('successRateText').textContent = `Treatment Success Rate in India: ${treatment.successRate}`;
+
+      // Build cost comparison table
+      const tableHead = document.getElementById('tableHead');
+      const tableBody = document.getElementById('tableBody');
+
+      // Create header row
+      const headerRow = document.createElement('tr');
+      headerRow.innerHTML = `
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-left sticky left-0 bg-slate-50 z-10">Procedure</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center bg-teal-100 border-l border-slate-200">${treatment.countries[0]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[1]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[2]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[3]}</th>
+      <th class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-slate-900 text-center border-l border-slate-200">${treatment.countries[4]}</th>
+    `;
+      tableHead.appendChild(headerRow);
+
+      // Create data rows
+      treatment.procedures.forEach((procedure, index) => {
+        const row = document.createElement('tr');
+        row.className = index < treatment.procedures.length - 1 ? 'hover:bg-slate-50 transition-colors' : 'hover:bg-slate-50 transition-colors';
+
+        const formatCost = (cost) => {
+          return cost !== null && cost !== undefined ? '$' + cost.toLocaleString() : 'N/A';
+        };
+
+        const cells = [
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm font-medium text-slate-900 sticky left-0 bg-white z-10 border-r border-slate-100">${procedure.name}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center font-semibold text-teal-600 bg-teal-50/30 border-l border-slate-100">${formatCost(procedure.costs[0])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[1])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[2])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[3])}</td>`,
+          `<td class="px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm text-center text-slate-700 border-l border-slate-100">${formatCost(procedure.costs[4])}</td>`
+        ];
+
+        row.innerHTML = cells.join('');
+        tableBody.appendChild(row);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
